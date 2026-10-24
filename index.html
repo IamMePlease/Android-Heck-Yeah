@@ -566,7 +566,7 @@
     <div class="vintage-ticker">
         <span class="ticker-badge">SYS.LOG</span>
         <marquee behavior="scroll" direction="left" scrollamount="5">
-            ★ WELCOME TO ANDROID HECK YEAH (AHY) ★ DIRECTORY ARCHIVE UPDATED ★ ADDED: THE PORTS VAULT (NAPL) ★ WINLATOR & GAMENATIVE COMPATIBLE ★ PRESS [/] FOR RAPID SEARCH ★ EMULATE WITH CARE ★
+            ★ WELCOME TO ANDROID HECK YEAH (AHY) ★ DIRECTORY ARCHIVE UPDATED ★ ADDED: THE PORTS VAULT (NAPL) & AIZENEMU CLUB ★ PRESS [/] FOR RAPID SEARCH ★ EMULATE WITH CARE ★
         </marquee>
     </div>
 
@@ -588,7 +588,7 @@
     <!-- Search Box -->
     <div class="search-container">
         <span class="search-icon">🔍</span>
-        <input type="text" id="search-bar" class="search-input" placeholder="Search (e.g., PS2, Turnip, NAPL, Winlator, RPG...)" aria-label="Search">
+        <input type="text" id="search-bar" class="search-input" placeholder="Search (e.g., PS2, Turnip, NAPL, AIZENEMU, Winlator...)" aria-label="Search">
         <span class="search-hint">KEY: [/]</span>
     </div>
 
@@ -659,7 +659,7 @@
 
     <div class="no-results" id="no-results" style="display:none; text-align:center; padding:30px; font-family:var(--pixel-font);">
         <p>⚠️ NO MATCHING RECORDS FOUND IN ARCHIVE</p>
-        <p style="font-size:0.85em; color:var(--text-muted);">Try keywords like "NAPL", "PS2", "Winlator", "Driver", "Turnip", or press ESC to clear.</p>
+        <p style="font-size:0.85em; color:var(--text-muted);">Try keywords like "NAPL", "AIZENEMU", "PS2", "Winlator", "Turnip", or press ESC to clear.</p>
     </div>
 
     <main>
@@ -732,7 +732,6 @@
                 <div class="group">
                     <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">— 3</span></div>
                     <ul>
-                        <!-- Added fe2rr.github.io -->
                         <li data-id="fe2rr-napl">
                             <span class="star">★</span> 
                             <a href="https://fe2rr.github.io/index.html" target="_blank" rel="noopener noreferrer">The Ports Vault (NAPL)</a> 
@@ -797,14 +796,20 @@
 
         <!-- COMMUNITY -->
         <section class="category-section" id="community" data-section="community">
-            <h2><span class="left"><span class="icon">💬</span> Community & Discussion <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
+            <h2><span class="left"><span class="icon">💬</span> Community & Discussion <span class="section-badge">4</span></span> <span class="collapse-icon">▼</span></h2>
             <div class="section-content">
                 <div class="group">
-                    <div class="group-label other">Links <span class="count">— 3</span></div>
+                    <div class="group-label other">Links <span class="count">— 4</span></div>
                     <ul>
                         <li data-id="fmhy-link"><span class="world">🌐</span> <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY</a> <span class="desc">Parent Directory / Main Wiki</span></li>
                         <li data-id="r-emulation"><span class="world">🌐</span> <a href="https://www.reddit.com/r/EmulationOnAndroid/" target="_blank" rel="noopener noreferrer">r/EmulationOnAndroid</a> <span class="desc">The #1 community for Android emulation news & setups</span></li>
                         <li data-id="r-nativeports"><span class="world">🌐</span> <a href="https://www.reddit.com/r/AndroidNativePorts/" target="_blank" rel="noopener noreferrer">r/AndroidNativePorts</a> <span class="desc">Native PC & console game ports on Android</span></li>
+                        <li data-id="aizenemu">
+                            <span class="world">🌐</span> 
+                            <a href="https://discord.gg/2nUrJK8cwJ" target="_blank" rel="noopener noreferrer">AIZENEMU Club</a> 
+                            <span class="tag-pill tag-new">NEW</span>
+                            <span class="desc">Unofficial native Android game ports — Go directly to the <code>#files</code> channel to download the APKs and required game data files</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -864,7 +869,7 @@
             </div>
         </section>
 
-        <!-- AI TOOLS (Grok Removed, count updated to 6) -->
+        <!-- AI TOOLS -->
         <section class="category-section" id="ai" data-section="ai">
             <h2><span class="left"><span class="icon">🤖</span> AI Tools (Mobile Browser) <span class="section-badge">6</span></span> <span class="collapse-icon">▼</span></h2>
             <div class="section-content">
@@ -937,7 +942,7 @@
                 osc.start();
                 osc.stop(audioCtx.currentTime + duration);
             } catch (e) {
-                // Audio not allowed or blocked
+                // Audio blocked or not allowed
             }
         }
 
@@ -1208,4 +1213,4 @@
         });
     </script>
 </body>
-  </html>
+    </html>
