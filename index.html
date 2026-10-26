@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" data-crt="false">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Heck Yeah (AHY) — The Underground Android Emulation Directory</title>
+    <title>Android Heck Yeah (AHY) (The Underground Android Emulation Directory)</title>
     
     <style>
         @font-face {
@@ -68,7 +67,6 @@
             --bevel-border: 2px outset #ffffff;
         }
 
-        /* Nostalgic CRT Overlay (Toggleable) */
         [data-crt="true"] body::before {
             content: " ";
             display: block;
@@ -95,7 +93,6 @@
             transition: background-color 0.25s, color 0.25s;
         }
 
-        /* Classic Retro Marquee Ticker */
         .vintage-ticker {
             display: flex;
             align-items: center;
@@ -127,7 +124,6 @@
             color: var(--retro-green);
         }
 
-        /* Classic Sticky Header */
         .sticky-header {
             position: sticky;
             top: 0;
@@ -220,7 +216,6 @@
         }
         .subtitle a { font-weight: 700; color: var(--accent-color); text-decoration: underline; }
 
-        /* Classic Search Bar */
         .search-container { position: relative; margin: 12px 0 8px; }
         .search-icon {
             position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
@@ -255,7 +250,6 @@
         .result-count { font-size: 0.8em; color: var(--retro-amber); font-family: var(--pixel-font); font-weight: 600; }
         .toolbar { display: flex; gap: 6px; flex-wrap: wrap; }
 
-        /* Retro Navigation Chips */
         .nav-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px; }
         .nav-chip {
             background: var(--surface-color);
@@ -276,7 +270,6 @@
             text-decoration: none;
         }
 
-        /* Retro Toolbox Section */
         .toolbox-panel {
             background: var(--surface-color);
             border: 2px solid var(--accent-color);
@@ -339,7 +332,6 @@
             line-height: 1.45;
         }
 
-        /* Category Sections */
         .category-section {
             background: var(--surface-color);
             border: 2px solid var(--border-color);
@@ -471,7 +463,6 @@
             vertical-align: middle;
         }
         .tag-new { background: #d29922; color: #000; }
-        .tag-hot { background: #cf222e; color: #fff; }
 
         .star { color: var(--star-color); margin-right: 6px; font-weight: bold; }
         .world { color: var(--world-color); margin-right: 6px; }
@@ -479,7 +470,6 @@
         .desc-warning { color: var(--warning-color); font-size: 0.82em; margin-left: 6px; font-weight: 600; }
         .hidden { display: none !important; }
 
-        /* Nostalgic 88x31 Badges & Footer */
         .footer {
             text-align: center;
             margin-top: 36px;
@@ -520,7 +510,6 @@
         .btn-purple { background: #3b115a; color: #d2a8ff; border-color: #d2a8ff; }
         .btn-orange { background: #4d2300; color: #ffa657; border-color: #ffa657; }
 
-        /* Retro Hit Counter */
         .hit-counter-box {
             display: inline-flex;
             align-items: center;
@@ -563,11 +552,10 @@
 </head>
 <body>
 
-    <!-- Classic Scrolling Ticker -->
     <div class="vintage-ticker">
         <span class="ticker-badge">SYS.LOG</span>
         <marquee behavior="scroll" direction="left" scrollamount="5">
-            ★ WELCOME TO ANDROID HECK YEAH (AHY) ★ DIRECTORY ARCHIVE UPDATED ★ ADDED: SPORTSBITE, THE PORTS VAULT (NAPL) & AIZENEMU CLUB ★ PRESS [/] FOR RAPID SEARCH ★ EMULATE WITH CARE ★
+            ★ WELCOME TO ANDROID HECK YEAH (AHY) ★ DIRECTORY ARCHIVE UPDATED ★ ADDED: SPORTSBITE & THE PORTS VAULT (NAPL) ★ PRESS [/] FOR RAPID SEARCH ★ EMULATE WITH CARE ★
         </marquee>
     </div>
 
@@ -586,10 +574,9 @@
         <p class="subtitle">An Android-focused extension to <a href="https://fmhy.net/" target="_blank">FMHY</a> · <span class="star">★</span> Recommended · 🌐 Community/Resource</p>
     </div>
 
-    <!-- Search Box -->
     <div class="search-container">
         <span class="search-icon">🔍</span>
-        <input type="text" id="search-bar" class="search-input" placeholder="Search (e.g., PS2, Sportsbite, Turnip, NAPL, AIZENEMU...)" aria-label="Search">
+        <input type="text" id="search-bar" class="search-input" placeholder="Search (e.g., PS2, Sportsbite, Turnip, NAPL, Winlator...)" aria-label="Search">
         <span class="search-hint">KEY: [/]</span>
     </div>
 
@@ -603,7 +590,6 @@
         </div>
     </div>
 
-    <!-- Category Jump Links -->
     <div class="nav-chips" id="nav-chips">
         <a class="nav-chip" href="#retro-toolbox">🧰 Retro Toolbox</a>
         <a class="nav-chip" href="#emulators">🎮 Emulators</a>
@@ -618,14 +604,12 @@
         <a class="nav-chip" href="#ai">🤖 AI Tools</a>
     </div>
 
-    <!-- FEATURE TOOL: Retro Companion Toolbox -->
     <section class="toolbox-panel" id="retro-toolbox">
         <h3>
             <span>💾 AHY Emulation Companion & Driver Matcher</span>
             <span style="font-size:0.7em; color:var(--text-muted); font-weight:normal;">[Offline Utility]</span>
         </h3>
         <div class="tool-grid">
-            <!-- Tool 1: ROM Extension Advisor -->
             <div class="tool-card">
                 <label for="console-select">💿 ROM & Format Optimizer</label>
                 <select id="console-select">
@@ -638,10 +622,9 @@
                     <option value="vita">PS Vita (.pkg / NoNpDrm / .vpk)</option>
                     <option value="pc">PC / Winlator (.exe / GOG pre-installed)</option>
                 </select>
-                <div class="tool-output" id="format-output">Select a console to see optimal format & compression advice to save phone storage.</div>
+                <div class="tool-output" id="format-output">Select a console to see optimal format and compression advice to save phone storage.</div>
             </div>
 
-            <!-- Tool 2: GPU & Turnip Driver Matcher -->
             <div class="tool-card">
                 <label for="gpu-select">⚡ Snapdragon Driver Advisor</label>
                 <select id="gpu-select">
@@ -660,7 +643,7 @@
 
     <div class="no-results" id="no-results" style="display:none; text-align:center; padding:30px; font-family:var(--pixel-font);">
         <p>⚠️ NO MATCHING RECORDS FOUND IN ARCHIVE</p>
-        <p style="font-size:0.85em; color:var(--text-muted);">Try keywords like "Sportsbite", "NAPL", "AIZENEMU", "PS2", "Winlator", "Turnip", or press ESC to clear.</p>
+        <p style="font-size:0.85em; color:var(--text-muted);">Try keywords like "Sportsbite", "NAPL", "PS2", "Winlator", "Turnip", or press ESC to clear.</p>
     </div>
 
     <main>
@@ -674,9 +657,9 @@
                         <li data-id="ppsspp"><span class="star">★</span> <a href="https://www.ppsspp.org/" target="_blank" rel="noopener noreferrer">PPSSPP</a> <span class="desc">PSP</span></li>
                         <li data-id="vita3k"><span class="star">★</span> <a href="https://vita3k.org/" target="_blank" rel="noopener noreferrer">Vita3K</a> <span class="desc">PS Vita</span></li>
                         <li data-id="armsx2"><span class="star">★</span> <a href="https://github.com/ARMSX2/ARMSX2" target="_blank" rel="noopener noreferrer">ARMSX2</a> <span class="desc">PS2</span></li>
-                        <li data-id="retroarch"><span class="star">★</span> <a href="https://www.retroarch.com/" target="_blank" rel="noopener noreferrer">RetroArch</a> <span class="desc">Frontend for Emulators, Game Engines and Media Players - Atari, NES, SNES, GB/GBA, N64, DS, GameCube/Wii partial, Genesis/Saturn/Dreamcast, PS1/PSP/PS2 partial, Arcade MAME/FBNeo + many more via cores</span></li>
+                        <li data-id="retroarch"><span class="star">★</span> <a href="https://www.retroarch.com/" target="_blank" rel="noopener noreferrer">RetroArch</a> <span class="desc">Frontend for Emulators, Game Engines and Media Players (Atari, NES, SNES, GB/GBA, N64, DS, GameCube/Wii partial, Genesis/Saturn/Dreamcast, PS1/PSP/PS2 partial, Arcade MAME/FBNeo + many more via cores)</span></li>
                         <li data-id="rpcsx"><span class="star">★</span> <a href="https://github.com/ouroboros420/rpcsx-ui-android" target="_blank" rel="noopener noreferrer">RPCSX Clanker</a> <span class="desc">PS3 Frontend</span></li>
-                        <li class="sub-item" data-id="rpcsx-core"><a href="https://github.com/ouroboros420/rpcsx" target="_blank" rel="noopener noreferrer">RPCSX Clanker Core</a> <span class="desc">PS3 Core - stays with Frontend</span></li>
+                        <li class="sub-item" data-id="rpcsx-core"><a href="https://github.com/ouroboros420/rpcsx" target="_blank" rel="noopener noreferrer">RPCSX Clanker Core</a> <span class="desc">PS3 Core (stays with Frontend)</span></li>
                         <li data-id="winlator-ludashi"><span class="star">★</span> <a href="https://github.com/StevenMXZ/Winlator-Ludashi/tree/ludashi-3.1" target="_blank" rel="noopener noreferrer">Winlator Ludashi</a> <span class="desc">General Windows</span></li>
                         <li data-id="winlator-plus"><span class="star">★</span> <a href="https://github.com/squalle0nhart/winlator_ludashi_plus/releases" target="_blank" rel="noopener noreferrer">Winlator Ludashi Plus</a> <span class="desc">Enhanced fork</span></li>
                         <li data-id="gamenative"><span class="star">★</span> <a href="https://gamenative.app/" target="_blank" rel="noopener noreferrer">GameNative</a> / <a href="https://github.com/utkarshdalal/GameNative/releases" target="_blank" rel="noopener noreferrer">GitHub</a> <span class="desc">Windows Gaming</span></li>
@@ -687,15 +670,15 @@
                 <div class="group">
                     <div class="group-label other">Other Emulators <span class="count">— 13</span></div>
                     <ul>
-                        <li data-id="armsx3"><a href="https://github.com/ARMSX2/ARMSX3/tree/master" target="_blank" rel="noopener noreferrer">ARMSX3</a> <span class="desc">PS3 - early, experimental fork</span></li>
-                        <li data-id="dolphin"><a href="https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu&hl=en_US" target="_blank" rel="noopener noreferrer">Dolphin Emulator</a> <span class="desc">GameCube and Wii - lets you play GameCube and Wii games on Android</span></li>
-                        <li data-id="cemu"><a href="https://github.com/SSimco/Cemu" target="_blank" rel="noopener noreferrer">Cemu Android</a> <span class="desc">Wii U - Android port of Cemu, early and experimental</span></li>
-                        <li data-id="gamehub"><a href="https://gamehub.xiaoji.com/en/" target="_blank" rel="noopener noreferrer">GameHub</a> <span class="desc-warning">⚠️ Closed Source - Not recommended if you value privacy. Use BannerHub or GameHub Lite instead</span></li>
-                        <li data-id="gamehub-lite"><a href="https://github.com/Producdevity/gamehub-lite/releases" target="_blank" rel="noopener noreferrer">GameHub Lite</a> <span class="desc">Windows Gaming - open alternative</span></li>
+                        <li data-id="armsx3"><a href="https://github.com/ARMSX2/ARMSX3/tree/master" target="_blank" rel="noopener noreferrer">ARMSX3</a> <span class="desc">PS3 (early, experimental fork)</span></li>
+                        <li data-id="dolphin"><a href="https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu&hl=en_US" target="_blank" rel="noopener noreferrer">Dolphin Emulator</a> <span class="desc">GameCube and Wii (lets you play GameCube and Wii games on Android)</span></li>
+                        <li data-id="cemu"><a href="https://github.com/SSimco/Cemu" target="_blank" rel="noopener noreferrer">Cemu Android</a> <span class="desc">Wii U (Android port of Cemu, early and experimental)</span></li>
+                        <li data-id="gamehub"><a href="https://gamehub.xiaoji.com/en/" target="_blank" rel="noopener noreferrer">GameHub</a> <span class="desc-warning">⚠️ Closed Source. Use BannerHub or GameHub Lite instead</span></li>
+                        <li data-id="gamehub-lite"><a href="https://github.com/Producdevity/gamehub-lite/releases" target="_blank" rel="noopener noreferrer">GameHub Lite</a> <span class="desc">Windows Gaming (open alternative)</span></li>
                         <li data-id="bannerhub"><a href="https://github.com/The412Banner/bannerhub" target="_blank" rel="noopener noreferrer">BannerHub</a> <span class="desc">Windows Gaming</span></li>
                         <li data-id="bannerlator"><a href="https://github.com/The412Banner/Bannerlator" target="_blank" rel="noopener noreferrer">Bannerlator</a> <span class="desc">Windows Gaming</span></li>
                         <li data-id="bannerhub-revanced"><a href="https://github.com/The412Banner/bannerhub-revanced" target="_blank" rel="noopener noreferrer">BannerHub Revanced</a> <span class="desc">Windows Gaming</span></li>
-                        <li data-id="nethersx2"><a href="https://github.com/Trixarian/NetherSX2-patch/releases" target="_blank" rel="noopener noreferrer">NetherSX2</a> <span class="desc">PS2 - patched</span></li>
+                        <li data-id="nethersx2"><a href="https://github.com/Trixarian/NetherSX2-patch/releases" target="_blank" rel="noopener noreferrer">NetherSX2</a> <span class="desc">PS2 (patched)</span></li>
                         <li data-id="hakux"><a href="https://github.com/rfandango/hakuX" target="_blank" rel="noopener noreferrer">hakuX</a> <span class="desc">Xbox Original</span></li>
                         <li data-id="x360mobile"><a href="https://x360mobile.com/" target="_blank" rel="noopener noreferrer">X360Mobile</a> <span class="desc">Xbox 360</span></li>
                         <li data-id="ax360e"><a href="https://github.com/aenu1/ax360e" target="_blank" rel="noopener noreferrer">aX360e</a> <span class="desc">Xbox 360</span></li>
@@ -712,15 +695,15 @@
                 <div class="group">
                     <div class="group-label recommended"><span class="star">★</span> Recommended Stores <span class="count">— 2</span></div>
                     <ul>
-                        <li data-id="liteapks"><span class="star">★</span> <a href="https://liteapks.com/" target="_blank" rel="noopener noreferrer">LiteAPKs</a> <span class="desc">#1 MOD APK source - modded games & premium unlocked</span></li>
-                        <li data-id="modyolo"><span class="star">★</span> <a href="https://modyolo.com/" target="_blank" rel="noopener noreferrer">MODYOLO</a> <span class="desc">Free MOD APK games & premium apps - huge library, fast updates</span></li>
+                        <li data-id="liteapks"><span class="star">★</span> <a href="https://liteapks.com/" target="_blank" rel="noopener noreferrer">LiteAPKs</a> <span class="desc">#1 MOD APK source (modded games & premium unlocked)</span></li>
+                        <li data-id="modyolo"><span class="star">★</span> <a href="https://modyolo.com/" target="_blank" rel="noopener noreferrer">MODYOLO</a> <span class="desc">Free MOD APK games & premium apps (huge library, fast updates)</span></li>
                     </ul>
                 </div>
                 <div class="group">
                     <div class="group-label other">Search Tools <span class="count">— 2</span></div>
                     <ul>
-                        <li data-id="virgil"><span class="world">🌐</span> <a href="https://virgil.samidy.com/Mobile/#gsc.tab=0" target="_blank" rel="noopener noreferrer">Virgil APK Search</a> <span class="desc">Aggregated search - searches 50+ APK sites at once</span> <span class="desc-warning">⚠️ Use uBlock Origin</span></li>
-                        <li data-id="hizsearch-apk"><span class="world">🌐</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a> <span class="desc">PC game search for Winlator / GameNative / GameHub - find Steam games to emulate</span></li>
+                        <li data-id="virgil"><span class="world">🌐</span> <a href="https://virgil.samidy.com/Mobile/#gsc.tab=0" target="_blank" rel="noopener noreferrer">Virgil APK Search</a> <span class="desc">Aggregated search (searches 50+ APK sites at once)</span> <span class="desc-warning">⚠️ Use uBlock Origin</span></li>
+                        <li data-id="hizsearch-apk"><span class="world">🌐</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a> <span class="desc">PC game search for Winlator / GameNative / GameHub (find Steam games to emulate)</span></li>
                     </ul>
                 </div>
             </div>
@@ -737,10 +720,10 @@
                             <span class="star">★</span> 
                             <a href="https://fe2rr.github.io/index.html" target="_blank" rel="noopener noreferrer">The Ports Vault (NAPL)</a> 
                             <span class="tag-pill tag-new">NEW</span>
-                            <span class="desc">Native Android Port List — Curated catalog and tracker for native PC/console game ports running on Android (Fallout, Diablo, NFS, Morrowind, GTA, etc.)</span>
+                            <span class="desc">Native Android Port List (Curated catalog and tracker for native PC/console game ports running on Android like Fallout, Diablo, NFS, Morrowind, GTA)</span>
                         </li>
-                        <li data-id="gaming-emporium"><span class="star">★</span> <a href="https://thegamingemporium.com/" target="_blank" rel="noopener noreferrer">The Gaming Emporium</a> <span class="desc">Curated archive of fan decompilations, PC ports, open-source projects, modern recreations - from r/SteamDeck community - abandonware, ROM hacks, native Android ports of console/PC games</span></li>
-                        <li data-id="hizsearch"><span class="star">★</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a> <span class="desc">PC game search engine for Winlator / GameNative - best for Steam games to emulate on Android</span></li>
+                        <li data-id="gaming-emporium"><span class="star">★</span> <a href="https://thegamingemporium.com/" target="_blank" rel="noopener noreferrer">The Gaming Emporium</a> <span class="desc">Curated archive of fan decompilations, PC ports, open-source projects, modern recreations from r/SteamDeck community</span></li>
+                        <li data-id="hizsearch"><span class="star">★</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a> <span class="desc">PC game search engine for Winlator / GameNative (best for Steam games to emulate on Android)</span></li>
                     </ul>
                 </div>
                 <div class="group">
@@ -782,14 +765,14 @@
                 <div class="group">
                     <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">— 1</span></div>
                     <ul>
-                        <li data-id="augustus"><span class="star">★</span> <a href="https://github.com/Keriew/augustus" target="_blank" rel="noopener noreferrer">Augustus</a> <span class="desc">Caesar III mod — enhanced gameplay, bug fixes, new features</span></li>
+                        <li data-id="augustus"><span class="star">★</span> <a href="https://github.com/Keriew/augustus" target="_blank" rel="noopener noreferrer">Augustus</a> <span class="desc">Caesar III mod (enhanced gameplay, bug fixes, new features)</span></li>
                     </ul>
                 </div>
                 <div class="group">
                     <div class="group-label other">Other <span class="count">— 2</span></div>
                     <ul>
-                        <li data-id="last-days"><a href="https://www.moddb.com/mods/the-last-days" target="_blank" rel="noopener noreferrer">The Last Days</a> <span class="desc">Mount & Blade: Warband — total conversion into Tolkien's Middle-earth</span></li>
-                        <li data-id="civ5-wiki"><a href="https://civilization-v-customisation.fandom.com/wiki/Civilization_V_Customisation_Wiki" target="_blank" rel="noopener noreferrer">Civilization V Customisation Wiki</a> <span class="desc">Civ V modding hub - custom civilizations, gameplay, resources, scenarios, wonders, guides</span></li>
+                        <li data-id="last-days"><a href="https://www.moddb.com/mods/the-last-days" target="_blank" rel="noopener noreferrer">The Last Days</a> <span class="desc">Mount & Blade: Warband (total conversion into Tolkien's Middle-earth)</span></li>
+                        <li data-id="civ5-wiki"><a href="https://civilization-v-customisation.fandom.com/wiki/Civilization_V_Customisation_Wiki" target="_blank" rel="noopener noreferrer">Civilization V Customisation Wiki</a> <span class="desc">Civ V modding hub (custom civilizations, gameplay, resources, scenarios, wonders, guides)</span></li>
                     </ul>
                 </div>
             </div>
@@ -797,20 +780,14 @@
 
         <!-- COMMUNITY -->
         <section class="category-section" id="community" data-section="community">
-            <h2><span class="left"><span class="icon">💬</span> Community & Discussion <span class="section-badge">4</span></span> <span class="collapse-icon">▼</span></h2>
+            <h2><span class="left"><span class="icon">💬</span> Community & Discussion <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
             <div class="section-content">
                 <div class="group">
-                    <div class="group-label other">Links <span class="count">— 4</span></div>
+                    <div class="group-label other">Links <span class="count">— 3</span></div>
                     <ul>
                         <li data-id="fmhy-link"><span class="world">🌐</span> <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY</a> <span class="desc">Parent Directory / Main Wiki</span></li>
-                        <li data-id="r-emulation"><span class="world">🌐</span> <a href="https://www.reddit.com/r/EmulationOnAndroid/" target="_blank" rel="noopener noreferrer">r/EmulationOnAndroid</a> <span class="desc">The #1 community for Android emulation news & setups</span></li>
+                        <li data-id="r-emulation"><span class="world">🌐</span> <a href="https://www.reddit.com/r/EmulationOnAndroid/" target="_blank" rel="noopener noreferrer">r/EmulationOnAndroid</a> <span class="desc">The main community for Android emulation news & setups</span></li>
                         <li data-id="r-nativeports"><span class="world">🌐</span> <a href="https://www.reddit.com/r/AndroidNativePorts/" target="_blank" rel="noopener noreferrer">r/AndroidNativePorts</a> <span class="desc">Native PC & console game ports on Android</span></li>
-                        <li data-id="aizenemu">
-                            <span class="world">🌐</span> 
-                            <a href="https://discord.gg/2nUrJK8cwJ" target="_blank" rel="noopener noreferrer">AIZENEMU Club</a> 
-                            <span class="tag-pill tag-new">NEW</span>
-                            <span class="desc">Unofficial native Android game ports — Go directly to the <code>#files</code> channel to download the APKs and required game data files</span>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -824,7 +801,7 @@
                     <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">— 2</span></div>
                     <ul>
                         <li data-id="stoat"><span class="star">★</span> <a href="https://stoat.chat/" target="_blank" rel="noopener noreferrer">Stoat</a> <span class="desc">Open-Source, Privacy-First Discord Alternative</span></li>
-                        <li class="sub-item" data-id="autofeeds"><span class="star">★</span> <a href="https://automod.vale.rocks/blog/introducing-autofeeds" target="_blank" rel="noopener noreferrer">AutoFeeds</a> <span class="desc">Syndication bot for Stoat - RSS/Atom/JSON feeds</span></li>
+                        <li class="sub-item" data-id="autofeeds"><span class="star">★</span> <a href="https://automod.vale.rocks/blog/introducing-autofeeds" target="_blank" rel="noopener noreferrer">AutoFeeds</a> <span class="desc">Syndication bot for Stoat (RSS/Atom/JSON feeds)</span></li>
                     </ul>
                 </div>
             </div>
@@ -837,12 +814,11 @@
                 <div class="group">
                     <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">— 2</span></div>
                     <ul>
-                        <!-- Added Sportsbite (Starred) -->
                         <li data-id="sportsbite">
                             <span class="star">★</span> 
                             <a href="https://sportsbite.org/" target="_blank" rel="noopener noreferrer">Sportsbite</a> 
                             <span class="tag-pill tag-new">NEW</span>
-                            <span class="desc">Free live sports streaming portal — Football, NBA, NFL, UFC/MMA, Boxing, F1 & major events</span> 
+                            <span class="desc">Free live sports streaming portal (Football, NBA, NFL, UFC/MMA, Boxing, F1)</span> 
                             <span class="desc-warning">⚠️ Use an ad blocker (uBlock Origin / Brave)</span>
                         </li>
                         <li data-id="sherdog"><span class="star">★</span> <a href="https://www.sherdog.com" target="_blank" rel="noopener noreferrer">Sherdog</a> <span class="desc">MMA Tracking</span></li>
@@ -852,7 +828,7 @@
                     <div class="group-label other">Other <span class="count">— 2</span></div>
                     <ul>
                         <li data-id="boxrec"><a href="https://boxrec.com" target="_blank" rel="noopener noreferrer">BoxRec</a> <span class="desc">Boxing Tracking</span></li>
-                        <li data-id="tapology"><a href="https://tapology.com" target="_blank" rel="noopener noreferrer">Tapology</a> <span class="desc">General Combat Sports - mostly MMA</span></li>
+                        <li data-id="tapology"><a href="https://tapology.com" target="_blank" rel="noopener noreferrer">Tapology</a> <span class="desc">General Combat Sports (mostly MMA)</span></li>
                     </ul>
                 </div>
             </div>
@@ -865,14 +841,14 @@
                 <div class="group">
                     <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">— 1</span></div>
                     <ul>
-                        <li data-id="ytdlnis"><span class="star">★</span> <a href="https://github.com/deniscerri/ytdlnis" target="_blank" rel="noopener noreferrer">YTDLnis</a> <span class="desc">Full-featured, open-source audio/video downloader for Android using yt-dlp (supports 1000+ sites)</span></li>
+                        <li data-id="ytdlnis"><span class="star">★</span> <a href="https://github.com/deniscerri/ytdlnis" target="_blank" rel="noopener noreferrer">YTDLnis</a> <span class="desc">Full-featured audio/video downloader for Android using yt-dlp (supports 1000+ sites)</span></li>
                     </ul>
                 </div>
                 <div class="group">
                     <div class="group-label other">Links <span class="count">— 2</span></div>
                     <ul>
-                        <li data-id="popcorngap"><a href="https://popcorngap.com/" target="_blank" rel="noopener noreferrer">PopcornGap</a> <span class="desc">Real RT audience scores — removes studio-pushed ticket-buyer votes</span></li>
-                        <li data-id="ytmp4"><a href="https://ytmp4.page/tliz" target="_blank" rel="noopener noreferrer">ytmp4.page</a> <span class="desc">YouTube / Video Downloader</span> <span class="desc-warning">⚠️ Use an ad blocker or close popups</span></li>
+                        <li data-id="popcorngap"><a href="https://popcorngap.com/" target="_blank" rel="noopener noreferrer">PopcornGap</a> <span class="desc">Real RT audience scores (removes studio-pushed ticket-buyer votes)</span></li>
+                        <li data-id="ytmp4"><a href="https://ytmp4.page/tliz" target="_blank" rel="noopener noreferrer">ytmp4.page</a> <span class="desc">YouTube / Video Downloader</span> <span class="desc-warning">⚠️ Use an ad blocker</span></li>
                     </ul>
                 </div>
             </div>
@@ -885,24 +861,23 @@
                 <div class="group">
                     <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">— 3</span></div>
                     <ul>
-                        <li data-id="deepseek"><span class="star">★</span> <a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek</a> <span class="desc">Advanced reasoning & coding</span></li>
-                        <li data-id="qwen"><span class="star">★</span> <a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer">Qwen Chat</a> <span class="desc">Versatile, strong multilingual & coding</span></li>
-                        <li data-id="zai"><span class="star">★</span> <a href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">Z.ai</a> <span class="desc">Browser only - Advanced reasoning</span></li>
+                        <li data-id="deepseek"><span class="star">★</span> <a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek</a> <span class="desc">Reasoning & coding</span></li>
+                        <li data-id="qwen"><span class="star">★</span> <a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer">Qwen Chat</a> <span class="desc">Multilingual & coding</span></li>
+                        <li data-id="zai"><span class="star">★</span> <a href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">Z.ai</a> <span class="desc">Browser only (reasoning)</span></li>
                     </ul>
                 </div>
                 <div class="group">
                     <div class="group-label other">Other <span class="count">— 3</span></div>
                     <ul>
                         <li data-id="meta-ai"><a href="https://www.meta.ai/" target="_blank" rel="noopener noreferrer">Meta AI</a> <span class="desc">Free, integrated with Meta ecosystem</span></li>
-                        <li data-id="claude"><a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a> <span class="desc">Strong long-context & nuanced writing</span></li>
-                        <li data-id="kimi"><a href="https://www.kimi.com/" target="_blank" rel="noopener noreferrer">Kimi</a> <span class="desc">Strong long-context, Moonshot AI</span></li>
+                        <li data-id="claude"><a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a> <span class="desc">Long-context writing</span></li>
+                        <li data-id="kimi"><a href="https://www.kimi.com/" target="_blank" rel="noopener noreferrer">Kimi</a> <span class="desc">Long-context, Moonshot AI</span></li>
                     </ul>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Nostalgic Footer with Web Badges and Hit Counter -->
     <div class="footer">
         <div class="retro-badges-row">
             <div class="button-88x31 btn-green">ANDROID<br>POWERED</div>
@@ -926,13 +901,12 @@
         <p style="margin-top:12px;">
             [ <a href="#emulators">Emulators</a> ] · [ <a href="#gaming-indexes">Ports</a> ] · [ <a href="#utilities">Drivers</a> ] · [ <a href="#sports">Sports</a> ] · [ <a href="https://fmhy.net/" target="_blank">FMHY Hub</a> ]
         </p>
-        <p>AHY — Android Heck Yeah · Built for classic speed, zero telemetry & open preservation.</p>
+        <p>AHY (Android Heck Yeah). Speed, zero telemetry, open preservation.</p>
     </div>
 
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">▲</button>
 
     <script>
-        // Web Audio Synthesizer for Retro 8-bit Sounds
         let audioCtx = null;
         let sfxEnabled = localStorage.getItem('ahy-sfx') === 'true';
 
@@ -950,9 +924,7 @@
                 gain.connect(audioCtx.destination);
                 osc.start();
                 osc.stop(audioCtx.currentTime + duration);
-            } catch (e) {
-                // Audio blocked or not allowed
-            }
+            } catch (e) {}
         }
 
         const sfxBtn = document.getElementById('sfx-toggle');
@@ -964,7 +936,6 @@
             if (sfxEnabled) playRetroBeep(580, 'triangle', 0.1);
         });
 
-        // CRT Mode Toggle
         const crtToggle = document.getElementById('crt-toggle');
         const isCrt = localStorage.getItem('ahy-crt') === 'true';
         document.documentElement.setAttribute('data-crt', isCrt);
@@ -978,7 +949,6 @@
             playRetroBeep(next ? 880 : 330, 'sawtooth');
         });
 
-        // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
         const savedTheme = localStorage.getItem('uhy-theme') || 'dark';
@@ -993,7 +963,6 @@
             playRetroBeep(520, 'sine');
         });
 
-        // Section Collapse Handlers
         const sections = document.querySelectorAll('.category-section');
         sections.forEach(section => {
             const id = section.dataset.section;
@@ -1037,7 +1006,6 @@
             playRetroBeep(280, 'square');
         });
 
-        // Search System
         const searchBar = document.getElementById('search-bar');
         const resultCount = document.getElementById('result-count');
         const noResults = document.getElementById('no-results');
@@ -1094,7 +1062,6 @@
             }
         });
 
-        // Favorites / Bookmarks System
         let bookmarks = JSON.parse(localStorage.getItem('ahy-bookmarks') || '[]');
         const favCountSpan = document.getElementById('fav-count');
 
@@ -1102,7 +1069,6 @@
             favCountSpan.textContent = bookmarks.length;
         }
 
-        // Attach action buttons to all items
         document.querySelectorAll('main li').forEach(li => {
             const id = li.dataset.id || li.textContent.trim().slice(0, 20);
             li.dataset.id = id;
@@ -1136,7 +1102,6 @@
         });
         updateFavCount();
 
-        // Filter Favorites Toggle
         let showingFavsOnly = false;
         const favsBtn = document.getElementById('favs-filter-btn');
         favsBtn.addEventListener('click', () => {
@@ -1160,7 +1125,6 @@
             playRetroBeep(showingFavsOnly ? 600 : 400, 'square');
         });
 
-        // Surprise Me / Random Pick Button
         document.getElementById('surprise-btn').addEventListener('click', () => {
             const allItems = Array.from(document.querySelectorAll('main li:not(.sub-item)'));
             if (!allItems.length) return;
@@ -1176,32 +1140,30 @@
             playRetroBeep(850, 'triangle', 0.12);
         });
 
-        // Tool 1: ROM Extension / Format Wizard Logic
         const formatDatabase = {
-            ps2: "⚡ Best: <b>.chd (V5 CD/DVD)</b> via <i>chdman</i>.<br>Saves ~30-50% storage over .iso without loss. Fully compatible with ARMSX2 & NetherSX2.",
+            ps2: "⚡ Best: <b>.chd (V5 CD/DVD)</b> via <i>chdman</i>.<br>Saves ~30-50% storage over .iso without loss. Works with ARMSX2 & NetherSX2.",
             gc_wii: "⚡ Best: <b>.rvz</b> using Dolphin's built-in converter (LZMA2 / 128KB block).<br>Saves up to 70% space vs raw .iso, retains scrubber data.",
-            psp: "⚡ Best: <b>.chd</b> or <b>.cso / .zso</b>.<br>PPSSPP has native ultra-fast CSO/CHD decompression. Compress via maxcso.",
-            ps1: "⚡ Best: <b>.chd</b>.<br>Combines multi-track .bin + .cue into one unified file. Works flawlessly in RetroArch (SwanStation/Beetle cores).",
-            switch: "⚡ Best: <b>.nsp</b> (base) + <b>.nsz</b> (compressed via nsz tool).<br>Eden Emu and modern Switch forks load compressed .nsz effortlessly.",
-            vita: "⚡ Best: <b>NoNpDrm folder / .zip</b> via Vita3K database.<br>Direct decryption saves time and prevents installation corruption.",
-            pc: "⚡ Best: <b>Pre-installed GOG / SteamRip folders</b>.<br>Avoid setup installers inside Winlator/GameNative to save container space and wineprefix bloat."
+            psp: "⚡ Best: <b>.chd</b> or <b>.cso / .zso</b>.<br>PPSSPP handles fast CSO/CHD decompression. Compress via maxcso.",
+            ps1: "⚡ Best: <b>.chd</b>.<br>Combines multi-track .bin + .cue into one file. Works in RetroArch cores.",
+            switch: "⚡ Best: <b>.nsp</b> (base) + <b>.nsz</b> (compressed via nsz tool).<br>Eden Emu loads compressed .nsz files.",
+            vita: "⚡ Best: <b>NoNpDrm folder / .zip</b> via Vita3K database.<br>Direct decryption saves time and avoids installation errors.",
+            pc: "⚡ Best: <b>Pre-installed GOG / SteamRip folders</b>.<br>Skip setup installers inside Winlator/GameNative to save container space."
         };
 
         document.getElementById('console-select').addEventListener('change', (e) => {
             const val = e.target.value;
             const out = document.getElementById('format-output');
-            out.innerHTML = formatDatabase[val] || "Select a console to see optimal format & compression advice to save phone storage.";
+            out.innerHTML = formatDatabase[val] || "Select a console to see optimal format and compression advice to save phone storage.";
             if (val) playRetroBeep(520, 'sine', 0.05);
         });
 
-        // Tool 2: GPU Driver Matcher Logic
         const driverDatabase = {
-            sd8gen3: "⚡ <b>Recommendation:</b> Turniptools A8XX / Mesa Turnip v24.3.0+.<br>Target Vulkan 1.3; handles UE5 and modern PC games in Winlator Ludashi Plus.",
-            sd8gen2: "⚡ <b>Recommendation:</b> Mesa Turnip v24.1.0 Revision 17 or v24.2.0.<br>The gold standard for emulation stability across Switch (Eden) and Winlator.",
-            sd8gen1: "⚡ <b>Recommendation:</b> Mesa Turnip v24.0.0 - v24.1.0.<br>Aggressive thermal throttling: set Winlator to DXVK 2.2 and use conservative resolution (720p).",
-            sd870: "⚡ <b>Recommendation:</b> Mesa Turnip Driver v23.3.0 or v24.0.0 (Adreno 650).<br>Mature driver branch with near 100% shader stability in Vita3K & Dolphin.",
-            sd7gen: "⚡ <b>Recommendation:</b> Turnip v24.x for Adreno 725.<br>Performs identically to 8+ Gen 1; keep Turnip cache enabled.",
-            mali: "⚠️ <b>Mali / Dimensity / Tensor:</b><br>Custom Turnip drivers are <u>Qualcomm Adreno exclusive</u>. Use the system default Vulkan driver and VirGL in Windows emulators."
+            sd8gen3: "⚡ <b>Recommendation:</b> Turniptools A8XX / Mesa Turnip v24.3.0+.<br>Target Vulkan 1.3; runs PC titles in Winlator Ludashi Plus.",
+            sd8gen2: "⚡ <b>Recommendation:</b> Mesa Turnip v24.1.0 Revision 17 or v24.2.0.<br>Stable baseline across Switch (Eden) and Winlator.",
+            sd8gen1: "⚡ <b>Recommendation:</b> Mesa Turnip v24.0.0 - v24.1.0.<br>Set Winlator to DXVK 2.2 and use 720p to control heat.",
+            sd870: "⚡ <b>Recommendation:</b> Mesa Turnip Driver v23.3.0 or v24.0.0 (Adreno 650).<br>Stable shader compilation in Vita3K & Dolphin.",
+            sd7gen: "⚡ <b>Recommendation:</b> Turnip v24.x for Adreno 725.<br>Performs close to 8+ Gen 1; keep Turnip cache enabled.",
+            mali: "⚠️ <b>Mali / Dimensity / Tensor:</b><br>Turnip drivers only work on Qualcomm Adreno hardware. Use default Vulkan and VirGL drivers."
         };
 
         document.getElementById('gpu-select').addEventListener('change', (e) => {
@@ -1211,7 +1173,6 @@
             if (val) playRetroBeep(480, 'sine', 0.05);
         });
 
-        // Scroll and Back-to-Top
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             backToTop.classList.toggle('visible', window.scrollY > 350);
