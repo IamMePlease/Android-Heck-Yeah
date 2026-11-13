@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Heck Yeah (AHY) (The Underground Android Emulation Directory)</title>
-    
+    <title>Android Heck Yeah (AHY) - Android Emulation Directory</title>
+
     <style>
         @font-face {
             font-family: "Optimistic";
@@ -22,126 +22,136 @@
         }
 
         :root {
-            --bg-color: #0e1117;
+            --bg-color: #0d1117;
             --surface-color: #161b22;
-            --surface-card: #1c2128;
-            --text-color: #e6edf3;
-            --text-muted: #8b949e;
+            --surface-card: #1c222b;
+            --text-color: #f0f6fc;
+            --text-muted: #9da7b3;
             --accent-color: #58a6ff;
-            --accent-hover: #79b8ff;
+            --accent-hover: #79c0ff;
+            --accent-soft: rgba(88, 166, 255, 0.14);
             --border-color: #30363d;
-            --border-bevel-light: #484f58;
-            --border-bevel-dark: #090d12;
             --star-color: #e3b341;
+            --star-soft: rgba(227, 179, 65, 0.14);
             --world-color: #58a6ff;
-            --card-bg-hover: #21262d;
-            --input-bg: #0d1117;
-            --warning-color: #f85149;
-            --retro-green: #39d353;
+            --card-bg-hover: #212832;
+            --input-bg: #0b0f14;
+            --warning-color: #ff7b72;
+            --warning-soft: rgba(248, 81, 73, 0.12);
+            --retro-green: #3fb950;
             --retro-amber: #d29922;
-            --shadow: 0 4px 12px rgba(0,0,0,0.4);
-            --bevel-border: 2px outset #3d444d;
-            --radius: 8px;
-            --pixel-font: "Optimistic Mono", "Courier New", Courier, monospace;
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+            --radius: 10px;
+            --radius-sm: 6px;
+            --sans-font: "Optimistic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --pixel-font: "Optimistic Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
         }
 
         [data-theme="light"] {
-            --bg-color: #f0ede6;
-            --surface-color: #fcfbf9;
-            --surface-card: #ece6dc;
-            --text-color: #212529;
-            --text-muted: #595f68;
-            --accent-color: #0b57d0;
-            --accent-hover: #0842a0;
-            --border-color: #b0a898;
-            --border-bevel-light: #ffffff;
-            --border-bevel-dark: #7a7265;
-            --star-color: #b07200;
-            --world-color: #0b57d0;
-            --card-bg-hover: #e2dbce;
+            --bg-color: #f4f2ed;
+            --surface-color: #ffffff;
+            --surface-card: #f7f5f0;
+            --text-color: #1f2328;
+            --text-muted: #525962;
+            --accent-color: #0969da;
+            --accent-hover: #0550ae;
+            --accent-soft: rgba(9, 105, 218, 0.1);
+            --border-color: #d0cdc4;
+            --star-color: #9a6700;
+            --star-soft: rgba(154, 103, 0, 0.1);
+            --world-color: #0969da;
+            --card-bg-hover: #eae6dd;
             --input-bg: #ffffff;
             --warning-color: #cf222e;
+            --warning-soft: rgba(207, 34, 46, 0.08);
             --retro-green: #1a7f37;
             --retro-amber: #9a6700;
-            --shadow: 0 4px 10px rgba(0,0,0,0.12);
-            --bevel-border: 2px outset #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
         }
 
         [data-crt="true"] body::before {
             content: " ";
             display: block;
             position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.015), rgba(0, 0, 255, 0.04));
+            inset: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%),
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.015), rgba(0, 0, 255, 0.03));
             z-index: 9999;
             background-size: 100% 3px, 5px 100%;
             pointer-events: none;
-            opacity: 0.85;
+            opacity: 0.75;
         }
 
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+
         body {
-            font-family: "Optimistic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.65;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 10px 16px 60px;
+            font-family: var(--sans-font);
+            line-height: 1.55;
+            margin: 0;
+            padding: 0 0 60px;
             background: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.25s, color 0.25s;
+            transition: background-color 0.2s, color 0.2s;
         }
 
-        .vintage-ticker {
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+
+        /* Announcement Bar */
+        .status-banner {
+            background: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.84em;
+            color: var(--text-muted);
+            padding: 7px 0;
+        }
+        .status-inner {
             display: flex;
             align-items: center;
-            background: var(--surface-color);
-            border: 2px solid var(--border-color);
-            border-style: inset;
-            font-family: var(--pixel-font);
-            font-size: 0.78em;
-            color: var(--text-color);
-            margin-bottom: 12px;
-            padding: 3px 8px;
             gap: 10px;
-            overflow: hidden;
-            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.4);
+            flex-wrap: wrap;
         }
         .ticker-badge {
-            background: var(--accent-color);
-            color: #fff;
-            padding: 2px 6px;
+            background: var(--accent-soft);
+            color: var(--accent-color);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-family: var(--pixel-font);
             font-weight: 700;
+            font-size: 0.78em;
             text-transform: uppercase;
-            font-size: 0.85em;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             white-space: nowrap;
         }
-        .vintage-ticker marquee {
-            flex-grow: 1;
-            margin: 0;
-            color: var(--retro-green);
-        }
+        .status-text strong { color: var(--text-color); }
 
+        /* Sticky Header & Search */
         .sticky-header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: var(--bg-color);
-            padding: 10px 0 8px;
-            margin: -10px -16px 12px;
-            padding-left: 16px;
-            padding-right: 16px;
-            border-bottom: 2px solid var(--border-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            background: rgba(13, 17, 23, 0.92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
         }
-        .header-bar {
+        [data-theme="light"] .sticky-header {
+            background: rgba(244, 242, 237, 0.94);
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
+            gap: 12px;
+            flex-wrap: wrap;
         }
         .logo-wrap {
             display: flex;
@@ -149,760 +159,1341 @@
             gap: 10px;
         }
         .retro-avatar {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #00ff87, #60efff);
-            border: 2px solid var(--border-color);
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #3fb950, #58a6ff);
+            border-radius: 8px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
-            font-size: 1.1em;
-            color: #000;
-            font-family: var(--pixel-font);
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.4);
-        }
-        h1 {
-            color: var(--text-color);
-            margin: 0;
-            font-size: 1.4em;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            font-size: 1em;
+            color: #0b0f14;
+            font-family: var(--pixel-font);
+            flex-shrink: 0;
+        }
+        .title-block h1 {
+            margin: 0;
+            font-size: 1.22em;
+            font-weight: 700;
+            letter-spacing: -0.3px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            line-height: 1.2;
         }
-        h1 .accent { color: var(--accent-color); }
+        .title-block .accent { color: var(--accent-color); }
         .badge-retro {
-            font-size: 0.55em;
-            background: #ff5722;
-            color: #fff;
-            padding: 1px 5px;
-            border-radius: 3px;
-            vertical-align: middle;
+            font-size: 0.62em;
+            background: var(--accent-soft);
+            color: var(--accent-color);
+            padding: 2px 6px;
+            border-radius: 4px;
             font-family: var(--pixel-font);
-            text-transform: uppercase;
+            font-weight: 700;
         }
+        .subtitle {
+            margin: 2px 0 0;
+            color: var(--text-muted);
+            font-size: 0.8em;
+        }
+        .subtitle a {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .subtitle a:hover { text-decoration: underline; }
+
         .header-controls {
             display: flex;
             gap: 6px;
+            align-items: center;
         }
-        .retro-btn {
+        .ui-btn {
             background: var(--surface-color);
             color: var(--text-color);
-            border: 2px solid var(--border-color);
-            border-style: outset;
-            padding: 4px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 6px 11px;
             font-size: 0.82em;
             cursor: pointer;
-            font-family: var(--pixel-font);
+            font-family: var(--sans-font);
             font-weight: 600;
-            transition: all 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+            white-space: nowrap;
         }
-        .retro-btn:active {
-            border-style: inset;
-            transform: translate(1px, 1px);
-        }
-        .retro-btn:hover {
+        .ui-btn:hover {
             background: var(--card-bg-hover);
+            border-color: var(--accent-color);
             color: var(--accent-color);
         }
-
-        .subtitle {
-            margin: 6px 0 0;
-            color: var(--text-muted);
-            font-size: 0.85em;
-            font-family: var(--pixel-font);
+        .ui-btn.active {
+            background: var(--accent-soft);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
-        .subtitle a { font-weight: 700; color: var(--accent-color); text-decoration: underline; }
+        .ui-btn.star-active {
+            background: var(--star-soft);
+            border-color: var(--star-color);
+            color: var(--star-color);
+        }
 
-        .search-container { position: relative; margin: 12px 0 8px; }
+        /* Integrated Search + Toolbar */
+        .header-search-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .search-container {
+            position: relative;
+            flex: 1 1 320px;
+        }
         .search-icon {
-            position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
-            color: var(--text-muted); font-size: 1em; pointer-events: none;
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.95em;
+            pointer-events: none;
         }
         .search-input {
             width: 100%;
-            padding: 10px 14px 10px 38px;
+            padding: 9px 76px 9px 36px;
             background: var(--input-bg);
-            border: 2px solid var(--border-color);
-            border-style: inset;
-            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
             color: var(--text-color);
-            font-family: var(--pixel-font);
-            font-size: 0.95em;
+            font-family: var(--sans-font);
+            font-size: 0.94em;
             outline: none;
+            transition: border-color 0.15s, box-shadow 0.15s;
         }
+        .search-input::placeholder { color: var(--text-muted); }
         .search-input:focus {
             border-color: var(--accent-color);
-            box-shadow: 0 0 8px rgba(88,166,255,0.4);
+            box-shadow: 0 0 0 3px var(--accent-soft);
         }
+        .search-clear {
+            position: absolute;
+            right: 48px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.05em;
+            cursor: pointer;
+            padding: 2px 6px;
+            display: none;
+            border-radius: 4px;
+        }
+        .search-clear:hover { color: var(--text-color); background: var(--card-bg-hover); }
+        .search-clear.visible { display: inline-flex; }
+
         .search-hint {
-            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-            color: var(--text-muted); font-size: 0.72em; background: var(--surface-color);
-            padding: 2px 6px; border: 1px solid var(--border-color); font-family: var(--pixel-font);
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.72em;
+            background: var(--surface-color);
+            padding: 2px 7px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--pixel-font);
+            pointer-events: none;
         }
 
-        .search-meta {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 8px; min-height: 24px; flex-wrap: wrap; gap: 8px;
+        .toolbar {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            align-items: center;
         }
-        .result-count { font-size: 0.8em; color: var(--retro-amber); font-family: var(--pixel-font); font-weight: 600; }
-        .toolbar { display: flex; gap: 6px; flex-wrap: wrap; }
 
-        .nav-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px; }
+        .filter-status {
+            margin-top: 8px;
+            font-size: 0.82em;
+            color: var(--retro-amber);
+            font-weight: 600;
+            display: none;
+        }
+        .filter-status.visible { display: block; }
+
+        /* Mobile Quick Nav Chips */
+        .mobile-nav {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 12px 0 4px;
+            scrollbar-width: thin;
+        }
         .nav-chip {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
-            border-style: outset;
-            border-radius: 2px;
-            padding: 4px 10px;
-            font-size: 0.76em;
+            border-radius: 999px;
+            padding: 5px 12px;
+            font-size: 0.82em;
             color: var(--text-muted);
             text-decoration: none;
-            font-family: var(--pixel-font);
             font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.15s;
         }
-        .nav-chip:hover {
-            background: var(--card-bg-hover);
+        .nav-chip:hover, .nav-chip.active {
+            background: var(--accent-soft);
             color: var(--accent-color);
             border-color: var(--accent-color);
-            text-decoration: none;
         }
 
-        .toolbox-panel {
-            background: var(--surface-color);
-            border: 2px solid var(--accent-color);
-            border-style: double;
-            border-width: 3px;
-            padding: 14px;
-            margin-bottom: 18px;
-            box-shadow: inset 1px 1px 0 #fff1, 3px 3px 0 rgba(0,0,0,0.5);
+        /* Main Two-Column Desktop Layout */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 230px minmax(0, 1fr);
+            gap: 24px;
+            margin-top: 18px;
+            align-items: start;
         }
-        .toolbox-panel h3 {
-            margin: 0 0 10px;
-            font-size: 1.05em;
-            color: var(--accent-color);
+
+        .sidebar {
+            position: sticky;
+            top: 132px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 12px;
+            box-shadow: var(--shadow);
+        }
+        .sidebar-title {
+            font-size: 0.74em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin: 0 0 8px 8px;
             font-family: var(--pixel-font);
+        }
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .sidebar-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 7px 10px;
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88em;
+            font-weight: 500;
+            transition: background-color 0.15s, color 0.15s;
         }
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-            margin-top: 10px;
+        .sidebar-link:hover {
+            background: var(--card-bg-hover);
+            color: var(--text-color);
         }
-        .tool-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border-color);
-            border-style: inset;
-            padding: 12px;
-            border-radius: 4px;
+        .sidebar-link.active {
+            background: var(--accent-soft);
+            color: var(--accent-color);
+            font-weight: 600;
         }
-        .tool-card label {
-            display: block;
+        .sidebar-count {
             font-size: 0.78em;
             font-family: var(--pixel-font);
-            color: var(--text-muted);
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .tool-card select, .tool-card input {
-            width: 100%;
-            padding: 7px 9px;
-            background: var(--input-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            font-family: var(--pixel-font);
-            font-size: 0.85em;
-            margin-bottom: 8px;
-            border-radius: 2px;
-        }
-        .tool-output {
-            background: var(--bg-color);
-            border: 1px dashed var(--border-color);
-            padding: 8px 10px;
-            font-family: var(--pixel-font);
-            font-size: 0.8em;
-            color: var(--retro-green);
-            min-height: 48px;
-            line-height: 1.45;
+            opacity: 0.75;
         }
 
-        .category-section {
+        /* Collapsible Toolbox & Sections */
+        .category-section, .toolbox-panel {
             background: var(--surface-color);
-            border: 2px solid var(--border-color);
-            border-style: solid;
-            border-radius: 4px;
-            margin-bottom: 14px;
-            overflow: hidden;
-            box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 138px;
         }
-        h2 {
-            border-bottom: 2px solid var(--border-color);
-            padding: 10px 14px;
-            color: var(--text-color);
+        .toolbox-panel {
+            border-color: rgba(88, 166, 255, 0.45);
+        }
+
+        .section-header {
+            padding: 13px 16px;
             margin: 0;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             user-select: none;
-            font-size: 0.98em;
-            font-family: var(--pixel-font);
+            font-size: 1.02em;
             font-weight: 700;
             background: var(--surface-card);
+            border-radius: var(--radius) var(--radius) 0 0;
+            border-bottom: 1px solid var(--border-color);
             transition: background-color 0.15s;
         }
-        h2:hover { background-color: var(--card-bg-hover); }
-        h2 .left { display: flex; align-items: center; gap: 8px; }
+        .collapsed .section-header {
+            border-radius: var(--radius);
+            border-bottom-color: transparent;
+        }
+        .section-header:hover { background: var(--card-bg-hover); }
+        .section-header .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
         .section-badge {
-            font-size: 0.72em;
+            font-size: 0.74em;
             color: var(--text-muted);
             background: var(--bg-color);
-            padding: 1px 6px;
+            padding: 2px 8px;
             border: 1px solid var(--border-color);
-            border-radius: 3px;
-        }
-        .collapse-icon { font-size: 0.75em; transition: transform 0.2s; color: var(--text-muted); font-family: var(--pixel-font); }
-        .collapsed .collapse-icon { transform: rotate(-90deg); }
-        .section-content { overflow: hidden; transition: max-height 0.25s ease; padding: 4px 14px 10px; }
-        .collapsed .section-content { max-height: 0 !important; padding-top: 0; padding-bottom: 0; }
-
-        .group { margin: 6px 0; }
-        .group-label {
-            font-size: 0.72em;
-            text-transform: uppercase;
+            border-radius: 999px;
             font-family: var(--pixel-font);
+            font-weight: 600;
+        }
+        .collapse-icon {
+            font-size: 0.8em;
+            transition: transform 0.2s;
+            color: var(--text-muted);
+            font-family: var(--pixel-font);
+        }
+        .collapsed .collapse-icon { transform: rotate(-90deg); }
+
+        /* CSS Grid smooth collapse (no height clipping bugs) */
+        .section-content {
+            display: grid;
+            grid-template-rows: 1fr;
+            transition: grid-template-rows 0.22s ease;
+        }
+        .section-inner {
+            overflow: hidden;
+            padding: 8px 16px 14px;
+            transition: padding 0.22s ease;
+        }
+        .collapsed .section-content {
+            grid-template-rows: 0fr;
+        }
+        .collapsed .section-inner {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* Toolbox Grid */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            padding-top: 6px;
+        }
+        .tool-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            border-radius: var(--radius-sm);
+        }
+        .tool-card label {
+            display: block;
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .tool-card select {
+            width: 100%;
+            padding: 9px 10px;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            border-radius: var(--radius-sm);
+            outline: none;
+        }
+        .tool-card select:focus { border-color: var(--accent-color); }
+        .tool-output {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+            font-size: 0.86em;
+            color: var(--retro-green);
+            min-height: 54px;
+            line-height: 1.5;
+        }
+
+        /* Groups & Directory Items */
+        .group { margin-top: 6px; }
+        .group-label {
+            font-size: 0.76em;
+            text-transform: uppercase;
             letter-spacing: 0.6px;
             font-weight: 700;
-            padding: 8px 6px 4px;
+            padding: 8px 4px 6px;
             display: flex;
             align-items: center;
             gap: 6px;
             color: var(--text-muted);
+            font-family: var(--pixel-font);
         }
         .group-label.recommended { color: var(--star-color); }
         .group-label.other {
-            color: var(--text-muted);
             border-top: 1px dashed var(--border-color);
-            margin-top: 8px;
-            padding-top: 10px;
+            margin-top: 10px;
+            padding-top: 12px;
         }
 
         ul { list-style: none; padding: 0; margin: 0; }
         li {
-            margin: 2px 0;
-            padding: 6px 10px;
-            border-radius: 4px;
+            margin: 3px 0;
+            padding: 9px 12px;
+            border-radius: var(--radius-sm);
             display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            border-left: 2px solid transparent;
-            transition: all 0.15s;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            border: 1px solid transparent;
+            transition: background-color 0.15s, border-color 0.15s;
         }
         li:hover {
             background-color: var(--card-bg-hover);
-            border-left: 2px solid var(--accent-color);
-            transform: translateX(2px);
+            border-color: var(--border-color);
+        }
+        li.sub-item {
+            margin-left: 22px;
+            border-left: 2px solid var(--border-color);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding-left: 14px;
         }
         li.highlighted-pick {
-            background-color: rgba(227, 179, 65, 0.2) !important;
-            border-left: 4px solid var(--star-color) !important;
-            animation: pulse-border 1.5s infinite;
-        }
-        @keyframes pulse-border {
-            0% { outline: 1px solid var(--star-color); }
-            50% { outline: 3px solid var(--star-color); }
-            100% { outline: 1px solid var(--star-color); }
+            background-color: var(--star-soft) !important;
+            border-color: var(--star-color) !important;
+            box-shadow: 0 0 0 2px var(--star-soft);
         }
 
-        li.sub-item { margin-left: 18px; border-left: 2px solid var(--border-color); padding-left: 12px; }
-        
-        .item-actions {
-            margin-left: auto;
+        .item-main {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 8px;
+            flex: 1;
+            min-width: 0;
+        }
+        .item-title-wrap {
             display: inline-flex;
-            gap: 4px;
-            opacity: 0.6;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
         }
-        li:hover .item-actions { opacity: 1; }
-        .action-icon {
-            cursor: pointer;
-            font-size: 0.85em;
-            padding: 1px 4px;
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-        }
-        .action-icon:hover { color: var(--star-color); }
-        .action-icon.bookmarked { color: var(--star-color); }
+        .star { color: var(--star-color); font-weight: bold; flex-shrink: 0; }
+        .world { color: var(--world-color); flex-shrink: 0; }
 
-        a {
+        .item-main a {
             color: var(--accent-color);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 650;
+            font-size: 0.98em;
         }
-        a:hover {
+        .item-main a:hover {
             color: var(--accent-hover);
             text-decoration: underline;
         }
-        a::after { content: " ↗"; font-size: 0.7em; opacity: 0; transition: opacity 0.2s; }
-        a:hover::after { opacity: 0.8; }
 
         .tag-pill {
-            font-size: 0.62em;
-            padding: 1px 5px;
-            border-radius: 2px;
+            font-size: 0.68em;
+            padding: 1px 6px;
+            border-radius: 4px;
             font-family: var(--pixel-font);
-            font-weight: 800;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-left: 6px;
-            vertical-align: middle;
         }
-        .tag-new { background: #d29922; color: #000; }
+        .tag-new { background: var(--star-color); color: #0b0f14; }
 
-        .star { color: var(--star-color); margin-right: 6px; font-weight: bold; }
-        .world { color: var(--world-color); margin-right: 6px; }
-        .desc { color: var(--text-muted); font-size: 0.84em; margin-left: 6px; }
-        .desc-warning { color: var(--warning-color); font-size: 0.82em; margin-left: 6px; font-weight: 600; }
+        .desc {
+            color: var(--text-muted);
+            font-size: 0.88em;
+            line-height: 1.45;
+        }
+        .desc-warning {
+            color: var(--warning-color);
+            background: var(--warning-soft);
+            padding: 1px 7px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .item-actions {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .action-icon {
+            cursor: pointer;
+            font-size: 0.95em;
+            padding: 3px 6px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: var(--text-muted);
+            opacity: 0.65;
+            transition: opacity 0.15s, background-color 0.15s, color 0.15s;
+        }
+        li:hover .action-icon, .action-icon.bookmarked { opacity: 1; }
+        .action-icon:hover {
+            background: var(--surface-color);
+            border-color: var(--border-color);
+            color: var(--star-color);
+        }
+        .action-icon.bookmarked { color: var(--star-color); }
+
         .hidden { display: none !important; }
 
+        .empty-state {
+            display: none;
+            text-align: center;
+            padding: 42px 20px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 18px;
+        }
+        .empty-state.visible { display: block; }
+        .empty-state h3 { margin: 0 0 6px; font-size: 1.05em; }
+        .empty-state p { margin: 0; color: var(--text-muted); font-size: 0.9em; }
+
+        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 36px;
-            padding-top: 20px;
-            border-top: 2px solid var(--border-color);
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
             color: var(--text-muted);
-            font-size: 0.82em;
-            font-family: var(--pixel-font);
+            font-size: 0.86em;
         }
+        .footer a { color: var(--accent-color); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
         .retro-badges-row {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 16px 0;
+            margin: 14px 0;
         }
         .button-88x31 {
             width: 88px;
             height: 31px;
-            border: 2px solid #555;
-            border-style: outset;
+            border: 1px solid #555;
+            border-radius: 3px;
             background: #222;
             color: #eee;
+            font-family: var(--pixel-font);
             font-size: 9px;
-            font-weight: 900;
+            font-weight: 800;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             line-height: 1.1;
             text-transform: uppercase;
-            letter-spacing: -0.5px;
             user-select: none;
-            box-shadow: 1px 1px 0 #000;
         }
-        .btn-green { background: #004d20; color: #4af626; border-color: #4af626; }
+        .btn-green { background: #004d20; color: #4af626; border-color: #3fb950; }
         .btn-blue { background: #0c2c52; color: #58a6ff; border-color: #58a6ff; }
-        .btn-purple { background: #3b115a; color: #d2a8ff; border-color: #d2a8ff; }
-        .btn-orange { background: #4d2300; color: #ffa657; border-color: #ffa657; }
+        .btn-purple { background: #3b115a; color: #d2a8ff; border-color: #bc8cff; }
+        .btn-orange { background: #4d2300; color: #ffa657; border-color: #f0883e; }
 
         .hit-counter-box {
             display: inline-flex;
             align-items: center;
             gap: 3px;
-            background: #000;
+            background: #0b0f14;
             padding: 3px 6px;
-            border: 2px solid #666;
-            border-style: inset;
-            margin: 8px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin: 6px 0;
         }
         .digit {
-            background: #111;
-            color: #00ff66;
+            background: #161b22;
+            color: #3fb950;
             font-family: var(--pixel-font);
-            font-size: 1.05em;
-            font-weight: 900;
-            padding: 0 4px;
-            border: 1px solid #333;
+            font-size: 0.95em;
+            font-weight: 700;
+            padding: 0 5px;
+            border-radius: 2px;
         }
 
         .back-to-top {
-            position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px;
-            background: var(--surface-color); color: var(--accent-color);
-            border: 2px solid var(--border-color); border-style: outset;
-            font-size: 1.2em; font-family: var(--pixel-font); cursor: pointer;
-            opacity: 0; transform: translateY(10px); transition: all 0.2s;
-            box-shadow: 2px 2px 0 rgba(0,0,0,0.5); z-index: 200;
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            width: 42px;
+            height: 42px;
+            background: var(--surface-color);
+            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            font-size: 1.1em;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: all 0.2s;
+            box-shadow: var(--shadow);
+            z-index: 200;
         }
-        .back-to-top.visible { opacity: 1; transform: translateY(0); }
-        .back-to-top:hover { background: var(--card-bg-hover); }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent-color);
+        }
 
-        @media (max-width: 650px) {
-            body { padding: 8px 10px 50px; }
-            h1 { font-size: 1.15em; }
+        @media (min-width: 960px) {
+            .mobile-nav { display: none; }
+        }
+        @media (max-width: 959px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+                margin-top: 8px;
+            }
+            .sidebar { display: none; }
+            .category-section, .toolbox-panel { scroll-margin-top: 155px; }
+        }
+        @media (max-width: 640px) {
+            .container { padding: 0 12px; }
             .search-hint { display: none; }
-            .header-bar { flex-wrap: wrap; gap: 8px; }
-            .vintage-ticker { font-size: 0.72em; }
+            .search-input { padding-right: 38px; }
+            .search-clear { right: 8px; }
+            li.sub-item { margin-left: 12px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="vintage-ticker">
-        <span class="ticker-badge">SYS.LOG</span>
-        <marquee behavior="scroll" direction="left" scrollamount="5">
-            ★ WELCOME TO ANDROID HECK YEAH (AHY) ★ DIRECTORY ARCHIVE UPDATED ★ ADDED: APKVISION, SPORTSBITE & THE PORTS VAULT (NAPL) ★ PRESS [/] FOR RAPID SEARCH ★ EMULATE WITH CARE ★
-        </marquee>
-    </div>
-
-    <div class="sticky-header" id="sticky-header">
-        <div class="header-bar">
-            <div class="logo-wrap">
-                <div class="retro-avatar">AH</div>
-                <h1>AHY <span class="accent">|</span> Android Heck Yeah <span class="badge-retro">v2.5</span></h1>
-            </div>
-            <div class="header-controls">
-                <button class="retro-btn" id="crt-toggle" title="Toggle CRT Scanline Effect">📺 CRT</button>
-                <button class="retro-btn" id="sfx-toggle" title="Toggle 8-bit Sound FX">🔊 SFX</button>
-                <button class="retro-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
-            </div>
-        </div>
-        <p class="subtitle">An Android-focused extension to <a href="https://fmhy.net/" target="_blank">FMHY</a> · <span class="star">★</span> Recommended · 🌐 Community/Resource</p>
-    </div>
-
-    <div class="search-container">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="search-bar" class="search-input" placeholder="Search (e.g., PS2, APKVision, Turnip, NAPL, Winlator...)" aria-label="Search">
-        <span class="search-hint">KEY: [/]</span>
-    </div>
-
-    <div class="search-meta">
-        <span class="result-count" id="result-count"></span>
-        <div class="toolbar">
-            <button class="retro-btn" id="surprise-btn">🎲 Surprise Me!</button>
-            <button class="retro-btn" id="favs-filter-btn">⭐ Bookmarks (<span id="fav-count">0</span>)</button>
-            <button class="retro-btn" id="expand-all">Expand All</button>
-            <button class="retro-btn" id="collapse-all">Collapse All</button>
+    <div class="status-banner">
+        <div class="container status-inner">
+            <span class="ticker-badge">Archive Update</span>
+            <span class="status-text">Added <strong>DroidDeck</strong> and <strong>Xendroid+</strong>, starred <strong>hakuX</strong>, and moved <strong>XenDroid</strong> to Other Emulators. Press <strong>/</strong> anytime to search.</span>
         </div>
     </div>
 
-    <div class="nav-chips" id="nav-chips">
-        <a class="nav-chip" href="#retro-toolbox">🧰 Retro Toolbox</a>
-        <a class="nav-chip" href="#emulators">🎮 Emulators</a>
-        <a class="nav-chip" href="#apk-stores">📦 APKs & MODs</a>
-        <a class="nav-chip" href="#gaming-indexes">🔍 Game Indexes</a>
-        <a class="nav-chip" href="#utilities">🛠️ Drivers</a>
-        <a class="nav-chip" href="#game-mods">🧩 Game Mods</a>
-        <a class="nav-chip" href="#community">💬 Community</a>
-        <a class="nav-chip" href="#social">👾 Social</a>
-        <a class="nav-chip" href="#sports">🥊 Sports</a>
-        <a class="nav-chip" href="#media">🎬 Media</a>
-        <a class="nav-chip" href="#ai">🤖 AI Tools</a>
-    </div>
-
-    <section class="toolbox-panel" id="retro-toolbox">
-        <h3>
-            <span>💾 AHY Emulation Companion & Driver Matcher</span>
-            <span style="font-size:0.7em; color:var(--text-muted); font-weight:normal;">[Offline Utility]</span>
-        </h3>
-        <div class="tool-grid">
-            <div class="tool-card">
-                <label for="console-select">💿 ROM & Format Optimizer</label>
-                <select id="console-select">
-                    <option value="">-- Select a Console or Format --</option>
-                    <option value="ps2">Sony PlayStation 2 (.iso / .chd)</option>
-                    <option value="gc_wii">GameCube & Wii (.rvz / .iso)</option>
-                    <option value="psp">PlayStation Portable (.cso / .iso / .chd)</option>
-                    <option value="ps1">PlayStation 1 (.chd / .pbp / .bin)</option>
-                    <option value="switch">Nintendo Switch (.nsp / .xci)</option>
-                    <option value="vita">PS Vita (.pkg / NoNpDrm / .vpk)</option>
-                    <option value="pc">PC / Winlator (.exe / GOG pre-installed)</option>
-                </select>
-                <div class="tool-output" id="format-output">Select a console to see optimal format and compression advice to save phone storage.</div>
+    <header class="sticky-header" id="sticky-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-wrap">
+                    <div class="retro-avatar">AH</div>
+                    <div class="title-block">
+                        <h1>AHY <span class="accent">|</span> Android Heck Yeah <span class="badge-retro">v2.6</span></h1>
+                        <p class="subtitle">Android extension to <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY</a> · <span class="star">★</span> Recommended · 🌐 Resource</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <button class="ui-btn" id="crt-toggle" title="Toggle CRT Scanline Effect">📺 CRT</button>
+                    <button class="ui-btn" id="sfx-toggle" title="Toggle 8-bit Sound FX">🔈 SFX</button>
+                    <button class="ui-btn" id="theme-toggle" aria-label="Toggle theme">🌙 Dark</button>
+                </div>
             </div>
 
-            <div class="tool-card">
-                <label for="gpu-select">⚡ Snapdragon Driver Advisor</label>
-                <select id="gpu-select">
-                    <option value="">-- Select Your Chipset / GPU --</option>
-                    <option value="sd8gen3">Snapdragon 8 Gen 3 / 8s Gen 3 (Adreno 750 / 735)</option>
-                    <option value="sd8gen2">Snapdragon 8 Gen 2 (Adreno 740)</option>
-                    <option value="sd8gen1">Snapdragon 8 Gen 1 / 8+ Gen 1 (Adreno 730)</option>
-                    <option value="sd870">Snapdragon 865 / 870 / 888 (Adreno 650 / 660)</option>
-                    <option value="sd7gen">Snapdragon 7+ Gen 2 / 7 Gen 3 (Adreno 725 / 720)</option>
-                    <option value="mali">MediaTek Dimensity / Mali GPU / Tensor</option>
-                </select>
-                <div class="tool-output" id="driver-output">Select your processor to find the best Mesa Turnip driver version.</div>
+            <div class="header-search-row">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-bar" class="search-input" placeholder="Search emulators, ports, APKs, drivers (e.g., DroidDeck, Xbox, Turnip)..." aria-label="Search directory">
+                    <button class="search-clear" id="search-clear" aria-label="Clear search" title="Clear search">✕</button>
+                    <span class="search-hint">/</span>
+                </div>
+                <div class="toolbar">
+                    <button class="ui-btn" id="rec-filter-btn" title="Show only starred recommendations">★ Recommended Only</button>
+                    <button class="ui-btn" id="favs-filter-btn" title="Show saved bookmarks">🔖 Bookmarks (<span id="fav-count">0</span>)</button>
+                    <button class="ui-btn" id="surprise-btn" title="Jump to a random entry">🎲 Surprise Me</button>
+                    <button class="ui-btn" id="expand-all">Expand All</button>
+                    <button class="ui-btn" id="collapse-all">Collapse All</button>
+                </div>
             </div>
+
+            <div class="filter-status" id="filter-status"></div>
+
+            <nav class="mobile-nav" aria-label="Quick category navigation">
+                <a class="nav-chip" href="#retro-toolbox">🧰 Toolbox</a>
+                <a class="nav-chip" href="#emulators">🎮 Emulators</a>
+                <a class="nav-chip" href="#apk-stores">📦 APKs & MODs</a>
+                <a class="nav-chip" href="#gaming-indexes">🔍 Game Indexes</a>
+                <a class="nav-chip" href="#utilities">🛠️ Drivers</a>
+                <a class="nav-chip" href="#game-mods">🧩 Game Mods</a>
+                <a class="nav-chip" href="#community">💬 Community</a>
+                <a class="nav-chip" href="#social">👾 Social</a>
+                <a class="nav-chip" href="#sports">🥊 Sports</a>
+                <a class="nav-chip" href="#media">🎬 Media</a>
+                <a class="nav-chip" href="#ai">🤖 AI Tools</a>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <div class="no-results" id="no-results" style="display:none; text-align:center; padding:30px; font-family:var(--pixel-font);">
-        <p>⚠️ NO MATCHING RECORDS FOUND IN ARCHIVE</p>
-        <p style="font-size:0.85em; color:var(--text-muted);">Try keywords like "APKVision", "Sportsbite", "NAPL", "PS2", "Winlator", "Turnip", or press ESC to clear.</p>
-    </div>
+    <div class="container">
+        <div class="layout-grid">
+            <aside class="sidebar" aria-label="Directory sections">
+                <div class="sidebar-title">Categories</div>
+                <nav class="sidebar-nav">
+                    <a class="sidebar-link" href="#retro-toolbox"><span>🧰 Retro Toolbox</span><span class="sidebar-count">2</span></a>
+                    <a class="sidebar-link" href="#emulators"><span>🎮 Emulators</span><span class="sidebar-count">26</span></a>
+                    <a class="sidebar-link" href="#apk-stores"><span>📦 APKs & MODs</span><span class="sidebar-count">5</span></a>
+                    <a class="sidebar-link" href="#gaming-indexes"><span>🔍 Game Indexes</span><span class="sidebar-count">6</span></a>
+                    <a class="sidebar-link" href="#utilities"><span>🛠️ Drivers & Tools</span><span class="sidebar-count">4</span></a>
+                    <a class="sidebar-link" href="#game-mods"><span>🧩 Game Mods</span><span class="sidebar-count">3</span></a>
+                    <a class="sidebar-link" href="#community"><span>💬 Community</span><span class="sidebar-count">3</span></a>
+                    <a class="sidebar-link" href="#social"><span>👾 Social Media</span><span class="sidebar-count">2</span></a>
+                    <a class="sidebar-link" href="#sports"><span>🥊 Sports Streams</span><span class="sidebar-count">4</span></a>
+                    <a class="sidebar-link" href="#media"><span>🎬 Media Tools</span><span class="sidebar-count">3</span></a>
+                    <a class="sidebar-link" href="#ai"><span>🤖 AI Tools</span><span class="sidebar-count">6</span></a>
+                </nav>
+            </aside>
 
-    <main>
-        <!-- EMULATORS -->
-        <section class="category-section" id="emulators" data-section="emulators">
-            <h2><span class="left"><span class="icon">🎮</span> Android Emulators <span class="section-badge">24</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(10 + core)</span></div>
-                    <ul>
-                        <li data-id="ppsspp"><span class="star">★</span> <a href="https://www.ppsspp.org/" target="_blank" rel="noopener noreferrer">PPSSPP</a> <span class="desc">PSP</span></li>
-                        <li data-id="vita3k"><span class="star">★</span> <a href="https://vita3k.org/" target="_blank" rel="noopener noreferrer">Vita3K</a> <span class="desc">PS Vita</span></li>
-                        <li data-id="armsx2"><span class="star">★</span> <a href="https://github.com/ARMSX2/ARMSX2" target="_blank" rel="noopener noreferrer">ARMSX2</a> <span class="desc">PS2</span></li>
-                        <li data-id="retroarch"><span class="star">★</span> <a href="https://www.retroarch.com/" target="_blank" rel="noopener noreferrer">RetroArch</a> <span class="desc">Frontend for Emulators, Game Engines and Media Players (Atari, NES, SNES, GB/GBA, N64, DS, GameCube/Wii partial, Genesis/Saturn/Dreamcast, PS1/PSP/PS2 partial, Arcade MAME/FBNeo + many more via cores)</span></li>
-                        <li data-id="rpcsx"><span class="star">★</span> <a href="https://github.com/ouroboros420/rpcsx-ui-android" target="_blank" rel="noopener noreferrer">RPCSX Clanker</a> <span class="desc">PS3 Frontend</span></li>
-                        <li class="sub-item" data-id="rpcsx-core"><a href="https://github.com/ouroboros420/rpcsx" target="_blank" rel="noopener noreferrer">RPCSX Clanker Core</a> <span class="desc">PS3 Core (stays with Frontend)</span></li>
-                        <li data-id="winlator-ludashi"><span class="star">★</span> <a href="https://github.com/StevenMXZ/Winlator-Ludashi/tree/ludashi-3.1" target="_blank" rel="noopener noreferrer">Winlator Ludashi</a> <span class="desc">General Windows</span></li>
-                        <li data-id="winlator-plus"><span class="star">★</span> <a href="https://github.com/squalle0nhart/winlator_ludashi_plus/releases" target="_blank" rel="noopener noreferrer">Winlator Ludashi Plus</a> <span class="desc">Enhanced fork</span></li>
-                        <li data-id="gamenative"><span class="star">★</span> <a href="https://gamenative.app/" target="_blank" rel="noopener noreferrer">GameNative</a> / <a href="https://github.com/utkarshdalal/GameNative/releases" target="_blank" rel="noopener noreferrer">GitHub</a> <span class="desc">Windows Gaming</span></li>
-                        <li data-id="eden"><span class="star">★</span> <a href="https://eden-emu.dev/" target="_blank" rel="noopener noreferrer">Eden Emu</a> <span class="desc">Switch</span></li>
-                        <li data-id="xendroid"><span class="star">★</span> <a href="https://github.com/rfandango/XenDroid" target="_blank" rel="noopener noreferrer">XenDroid</a> <span class="desc">Xbox 360</span></li>
-                    </ul>
-                </div>
-                <div class="group">
-                    <div class="group-label other">Other Emulators <span class="count">(13)</span></div>
-                    <ul>
-                        <li data-id="armsx3"><a href="https://github.com/ARMSX2/ARMSX3/tree/master" target="_blank" rel="noopener noreferrer">ARMSX3</a> <span class="desc">PS3 (early, experimental fork)</span></li>
-                        <li data-id="dolphin"><a href="https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu&hl=en_US" target="_blank" rel="noopener noreferrer">Dolphin Emulator</a> <span class="desc">GameCube and Wii (lets you play GameCube and Wii games on Android)</span></li>
-                        <li data-id="cemu"><a href="https://github.com/SSimco/Cemu" target="_blank" rel="noopener noreferrer">Cemu Android</a> <span class="desc">Wii U (Android port of Cemu, early and experimental)</span></li>
-                        <li data-id="gamehub"><a href="https://gamehub.xiaoji.com/en/" target="_blank" rel="noopener noreferrer">GameHub</a> <span class="desc-warning">⚠️ Closed Source. Use BannerHub or GameHub Lite instead</span></li>
-                        <li data-id="gamehub-lite"><a href="https://github.com/Producdevity/gamehub-lite/releases" target="_blank" rel="noopener noreferrer">GameHub Lite</a> <span class="desc">Windows Gaming (open alternative)</span></li>
-                        <li data-id="bannerhub"><a href="https://github.com/The412Banner/bannerhub" target="_blank" rel="noopener noreferrer">BannerHub</a> <span class="desc">Windows Gaming</span></li>
-                        <li data-id="bannerlator"><a href="https://github.com/The412Banner/Bannerlator" target="_blank" rel="noopener noreferrer">Bannerlator</a> <span class="desc">Windows Gaming</span></li>
-                        <li data-id="bannerhub-revanced"><a href="https://github.com/The412Banner/bannerhub-revanced" target="_blank" rel="noopener noreferrer">BannerHub Revanced</a> <span class="desc">Windows Gaming</span></li>
-                        <li data-id="nethersx2"><a href="https://github.com/Trixarian/NetherSX2-patch/releases" target="_blank" rel="noopener noreferrer">NetherSX2</a> <span class="desc">PS2 (patched)</span></li>
-                        <li data-id="hakux"><a href="https://github.com/rfandango/hakuX" target="_blank" rel="noopener noreferrer">hakuX</a> <span class="desc">Xbox Original</span></li>
-                        <li data-id="x360mobile"><a href="https://x360mobile.com/" target="_blank" rel="noopener noreferrer">X360Mobile</a> <span class="desc">Xbox 360</span></li>
-                        <li data-id="ax360e"><a href="https://github.com/aenu1/ax360e" target="_blank" rel="noopener noreferrer">aX360e</a> <span class="desc">Xbox 360</span></li>
-                        <li data-id="winnative"><a href="https://github.com/WinNative-Emu/WinNative" target="_blank" rel="noopener noreferrer">WinNative</a> <span class="desc">General Windows</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            <main>
+                <!-- TOOLBOX -->
+                <section class="toolbox-panel" id="retro-toolbox" data-section="toolbox">
+                    <h2 class="section-header">
+                        <span class="left"><span>🧰 AHY Emulation Companion & Driver Matcher</span> <span class="section-badge">Offline Tool</span></span>
+                        <span class="collapse-icon">▼</span>
+                    </h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="tool-grid">
+                                <div class="tool-card">
+                                    <label for="console-select">💿 ROM & Format Optimizer</label>
+                                    <select id="console-select">
+                                        <option value="">-- Select a Console or Format --</option>
+                                        <option value="ps2">Sony PlayStation 2 (.iso / .chd)</option>
+                                        <option value="gc_wii">GameCube & Wii (.rvz / .iso)</option>
+                                        <option value="psp">PlayStation Portable (.cso / .iso / .chd)</option>
+                                        <option value="ps1">PlayStation 1 (.chd / .pbp / .bin)</option>
+                                        <option value="switch">Nintendo Switch (.nsp / .xci)</option>
+                                        <option value="vita">PS Vita (.pkg / NoNpDrm / .vpk)</option>
+                                        <option value="pc">PC / Winlator (.exe / GOG pre-installed)</option>
+                                    </select>
+                                    <div class="tool-output" id="format-output">Select a console to see optimal format and compression advice to save phone storage.</div>
+                                </div>
 
-        <!-- APKS -->
-        <section class="category-section" id="apk-stores" data-section="apk-stores">
-            <h2><span class="left"><span class="icon">📦</span> Android APKs - MODs / Premium <span class="section-badge">5</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended Stores <span class="count">(3)</span></div>
-                    <ul>
-                        <li data-id="apkvision"><span class="star">★</span> <a href="https://apkvision.org/" target="_blank" rel="noopener noreferrer">APKVision</a> <span class="tag-pill tag-new">NEW</span> <span class="desc">Clean and modded Android games, direct OBB caches, fan ports, and premium APKs</span></li>
-                        <li data-id="liteapks"><span class="star">★</span> <a href="https://liteapks.com/" target="_blank" rel="noopener noreferrer">LiteAPKs</a> <span class="desc">#1 MOD APK source (modded games & premium unlocked)</span></li>
-                        <li data-id="modyolo"><span class="star">★</span> <a href="https://modyolo.com/" target="_blank" rel="noopener noreferrer">MODYOLO</a> <span class="desc">Free MOD APK games & premium apps (huge library, fast updates)</span></li>
-                    </ul>
-                </div>
-                <div class="group">
-                    <div class="group-label other">Search Tools <span class="count">(2)</span></div>
-                    <ul>
-                        <li data-id="virgil"><span class="world">🌐</span> <a href="https://virgil.samidy.com/Mobile/#gsc.tab=0" target="_blank" rel="noopener noreferrer">Virgil APK Search</a> <span class="desc">Aggregated search (searches 50+ APK sites at once)</span> <span class="desc-warning">⚠️ Use uBlock Origin</span></li>
-                        <li data-id="hizsearch-apk"><span class="world">🌐</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a> <span class="desc">PC game search for Winlator / GameNative / GameHub (find Steam games to emulate)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                                <div class="tool-card">
+                                    <label for="gpu-select">⚡ Snapdragon Driver Advisor</label>
+                                    <select id="gpu-select">
+                                        <option value="">-- Select Your Chipset / GPU --</option>
+                                        <option value="sd8gen3">Snapdragon 8 Gen 3 / 8s Gen 3 (Adreno 750 / 735)</option>
+                                        <option value="sd8gen2">Snapdragon 8 Gen 2 (Adreno 740)</option>
+                                        <option value="sd8gen1">Snapdragon 8 Gen 1 / 8+ Gen 1 (Adreno 730)</option>
+                                        <option value="sd870">Snapdragon 865 / 870 / 888 (Adreno 650 / 660)</option>
+                                        <option value="sd7gen">Snapdragon 7+ Gen 2 / 7 Gen 3 (Adreno 725 / 720)</option>
+                                        <option value="mali">MediaTek Dimensity / Mali GPU / Tensor</option>
+                                    </select>
+                                    <div class="tool-output" id="driver-output">Select your processor to find the best Mesa Turnip driver version.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- GAMING INDEXES -->
-        <section class="category-section" id="gaming-indexes" data-section="gaming-indexes">
-            <h2><span class="left"><span class="icon">🔍</span> Gaming Indexes & Native Ports <span class="section-badge">6</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(3)</span></div>
-                    <ul>
-                        <li data-id="fe2rr-napl">
-                            <span class="star">★</span> 
-                            <a href="https://fe2rr.github.io/index.html" target="_blank" rel="noopener noreferrer">The Ports Vault (NAPL)</a> 
-                            <span class="tag-pill tag-new">NEW</span>
-                            <span class="desc">Native Android Port List (Curated catalog and tracker for native PC/console game ports running on Android like Fallout, Diablo, NFS, Morrowind, GTA)</span>
-                        </li>
-                        <li data-id="gaming-emporium"><span class="star">★</span> <a href="https://thegamingemporium.com/" target="_blank" rel="noopener noreferrer">The Gaming Emporium</a> <span class="desc">Curated archive of fan decompilations, PC ports, open-source projects, modern recreations from r/SteamDeck community</span></li>
-                        <li data-id="hizsearch"><span class="star">★</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a> <span class="desc">PC game search engine for Winlator / GameNative (best for Steam games to emulate on Android)</span></li>
-                    </ul>
+                <div class="empty-state" id="empty-state">
+                    <h3 id="empty-title">No matching entries found</h3>
+                    <p id="empty-subtitle">Try clearing your search or toggling off active filters.</p>
                 </div>
-                <div class="group">
-                    <div class="group-label other">Other Indexes <span class="count">(3)</span></div>
-                    <ul>
-                        <li data-id="rohan-archive"><span class="world">🌐</span> <a href="https://archive.org/details/@rohankar" target="_blank" rel="noopener noreferrer">RohanKar Archive</a> <span class="desc">PC Game index on Archive.org</span></li>
-                        <li data-id="torrminatorr"><span class="world">🌐</span> <a href="https://forum.torrminatorr.com/" target="_blank" rel="noopener noreferrer">Torrminatorr</a> <span class="desc">Forum & index for PC game downloads, repacks, direct links</span></li>
-                        <li data-id="steamrip"><span class="world">🌐</span> <a href="https://steamrip.com/" target="_blank" rel="noopener noreferrer">SteamRip</a> <span class="desc">Direct download links for pre-installed PC games, no setup required</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
-        <!-- UTILITIES & DRIVERS -->
-        <section class="category-section" id="utilities" data-section="utilities">
-            <h2><span class="left"><span class="icon">🛠️</span> Emulator Utilities & Driver <span class="section-badge">4</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(3)</span></div>
-                    <ul>
-                        <li data-id="adrenotools"><span class="star">★</span> <a href="https://github.com/whitebelyash/AdrenoToolsDrivers/releases" target="_blank" rel="noopener noreferrer">AdrenoTools Drivers</a> <span class="desc">Mesa Turnip custom Vulkan drivers for Adreno 6xx/7xx</span></li>
-                        <li data-id="turniptools"><span class="star">★</span> <a href="https://github.com/DiskDVD/TurniptoolsA8XX/releases" target="_blank" rel="noopener noreferrer">Turniptools A8XX</a> <span class="desc">Optimized Turnip drivers for newer Snapdragon 8 Gen series</span></li>
-                        <li data-id="steven-drivers"><span class="star">★</span> <a href="https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases" target="_blank" rel="noopener noreferrer">StevenMXZ Adreno Drivers</a> <span class="desc">Curated releases for Winlator & Switch emulators</span></li>
-                    </ul>
-                </div>
-                <div class="group">
-                    <div class="group-label other">Resources <span class="count">(1)</span></div>
-                    <ul>
-                        <li data-id="psvita-db"><span class="world">🌐</span> <a href="https://github.com/txy7795679/PSVITA-PKGJ-DATADB/blob/master/PSV_GAMES.tsv#L331" target="_blank" rel="noopener noreferrer">PS Vita DB (Vita3K)</a> <span class="desc">Game ID and compatibility database</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <!-- EMULATORS -->
+                <section class="category-section" id="emulators" data-section="emulators">
+                    <h2 class="section-header"><span class="left"><span>🎮 Android Emulators</span> <span class="section-badge">26</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(12 + core)</span></div>
+                                <ul>
+                                    <li data-id="ppsspp" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://www.ppsspp.org/" target="_blank" rel="noopener noreferrer">PPSSPP</a></span>
+                                            <span class="desc">PSP</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="vita3k" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://vita3k.org/" target="_blank" rel="noopener noreferrer">Vita3K</a></span>
+                                            <span class="desc">PS Vita</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="armsx2" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/ARMSX2/ARMSX2" target="_blank" rel="noopener noreferrer">ARMSX2</a></span>
+                                            <span class="desc">PS2</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="retroarch" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://www.retroarch.com/" target="_blank" rel="noopener noreferrer">RetroArch</a></span>
+                                            <span class="desc">Frontend for Emulators, Game Engines and Media Players (Atari, NES, SNES, GB/GBA, N64, DS, GameCube/Wii partial, Genesis/Saturn/Dreamcast, PS1/PSP/PS2 partial, Arcade MAME/FBNeo + many more via cores)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="rpcsx" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/ouroboros420/rpcsx-ui-android" target="_blank" rel="noopener noreferrer">RPCSX Clanker</a></span>
+                                            <span class="desc">PS3 Frontend</span>
+                                        </div>
+                                    </li>
+                                    <li class="sub-item" data-id="rpcsx-core" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/ouroboros420/rpcsx" target="_blank" rel="noopener noreferrer">RPCSX Clanker Core</a></span>
+                                            <span class="desc">PS3 Core (stays with Frontend)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="winlator-ludashi" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/StevenMXZ/Winlator-Ludashi/tree/ludashi-3.1" target="_blank" rel="noopener noreferrer">Winlator Ludashi</a></span>
+                                            <span class="desc">General Windows</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="winlator-plus" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/squalle0nhart/winlator_ludashi_plus/releases" target="_blank" rel="noopener noreferrer">Winlator Ludashi Plus</a></span>
+                                            <span class="desc">Enhanced fork</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="gamenative" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://gamenative.app/" target="_blank" rel="noopener noreferrer">GameNative</a> / <a href="https://github.com/utkarshdalal/GameNative/releases" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+                                            <span class="desc">Windows Gaming</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="droiddeck" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/Droid-Deck/Droiddeck" target="_blank" rel="noopener noreferrer">DroidDeck</a> <span class="tag-pill tag-new">NEW</span></span>
+                                            <span class="desc">SteamOS / Steam Big Picture client for Android via ARM64 Proton & FEX (Windows & Steam Gaming)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="eden" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://eden-emu.dev/" target="_blank" rel="noopener noreferrer">Eden Emu</a></span>
+                                            <span class="desc">Switch</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="xendroid-plus" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/phforner0/Xendroid-Plus" target="_blank" rel="noopener noreferrer">Xendroid+</a> <span class="tag-pill tag-new">NEW</span></span>
+                                            <span class="desc">Xbox 360 (enhanced fork of XenDroid)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="hakux" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/rfandango/hakuX" target="_blank" rel="noopener noreferrer">hakuX</a></span>
+                                            <span class="desc">Xbox Original</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-        <!-- GAME MODS -->
-        <section class="category-section" id="game-mods" data-section="game-mods" data-default-collapsed="true">
-            <h2><span class="left"><span class="icon">🧩</span> Game Mods (Android & Emulation) <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(1)</span></div>
-                    <ul>
-                        <li data-id="augustus"><span class="star">★</span> <a href="https://github.com/Keriew/augustus" target="_blank" rel="noopener noreferrer">Augustus</a> <span class="desc">Caesar III mod (enhanced gameplay, bug fixes, new features)</span></li>
-                    </ul>
-                </div>
-                <div class="group">
-                    <div class="group-label other">Other <span class="count">(2)</span></div>
-                    <ul>
-                        <li data-id="last-days"><a href="https://www.moddb.com/mods/the-last-days" target="_blank" rel="noopener noreferrer">The Last Days</a> <span class="desc">Mount & Blade: Warband (total conversion into Tolkien's Middle-earth)</span></li>
-                        <li data-id="civ5-wiki"><a href="https://civilization-v-customisation.fandom.com/wiki/Civilization_V_Customisation_Wiki" target="_blank" rel="noopener noreferrer">Civilization V Customisation Wiki</a> <span class="desc">Civ V modding hub (custom civilizations, gameplay, resources, scenarios, wonders, guides)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Other Emulators <span class="count">(13)</span></div>
+                                <ul>
+                                    <li data-id="xendroid">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/rfandango/XenDroid" target="_blank" rel="noopener noreferrer">XenDroid</a></span>
+                                            <span class="desc">Xbox 360</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="armsx3">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/ARMSX2/ARMSX3/tree/master" target="_blank" rel="noopener noreferrer">ARMSX3</a></span>
+                                            <span class="desc">PS3 (early, experimental fork)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="dolphin">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu&hl=en_US" target="_blank" rel="noopener noreferrer">Dolphin Emulator</a></span>
+                                            <span class="desc">GameCube and Wii</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="cemu">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/SSimco/Cemu" target="_blank" rel="noopener noreferrer">Cemu Android</a></span>
+                                            <span class="desc">Wii U (Android port of Cemu, early and experimental)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="gamehub">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://gamehub.xiaoji.com/en/" target="_blank" rel="noopener noreferrer">GameHub</a></span>
+                                            <span class="desc-warning">⚠️ Closed Source. Use BannerHub or GameHub Lite instead</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="gamehub-lite">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/Producdevity/gamehub-lite/releases" target="_blank" rel="noopener noreferrer">GameHub Lite</a></span>
+                                            <span class="desc">Windows Gaming (open alternative)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="bannerhub">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/The412Banner/bannerhub" target="_blank" rel="noopener noreferrer">BannerHub</a></span>
+                                            <span class="desc">Windows Gaming</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="bannerlator">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/The412Banner/Bannerlator" target="_blank" rel="noopener noreferrer">Bannerlator</a></span>
+                                            <span class="desc">Windows Gaming</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="bannerhub-revanced">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/The412Banner/bannerhub-revanced" target="_blank" rel="noopener noreferrer">BannerHub Revanced</a></span>
+                                            <span class="desc">Windows Gaming</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="nethersx2">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/Trixarian/NetherSX2-patch/releases" target="_blank" rel="noopener noreferrer">NetherSX2</a></span>
+                                            <span class="desc">PS2 (patched)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="x360mobile">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://x360mobile.com/" target="_blank" rel="noopener noreferrer">X360Mobile</a></span>
+                                            <span class="desc">Xbox 360</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="ax360e">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/aenu1/ax360e" target="_blank" rel="noopener noreferrer">aX360e</a></span>
+                                            <span class="desc">Xbox 360</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="winnative">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://github.com/WinNative-Emu/WinNative" target="_blank" rel="noopener noreferrer">WinNative</a></span>
+                                            <span class="desc">General Windows</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- COMMUNITY -->
-        <section class="category-section" id="community" data-section="community">
-            <h2><span class="left"><span class="icon">💬</span> Community & Discussion <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label other">Links <span class="count">(3)</span></div>
-                    <ul>
-                        <li data-id="fmhy-link"><span class="world">🌐</span> <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY</a> <span class="desc">Parent Directory / Main Wiki</span></li>
-                        <li data-id="r-emulation"><span class="world">🌐</span> <a href="https://www.reddit.com/r/EmulationOnAndroid/" target="_blank" rel="noopener noreferrer">r/EmulationOnAndroid</a> <span class="desc">The main community for Android emulation news & setups</span></li>
-                        <li data-id="r-nativeports"><span class="world">🌐</span> <a href="https://www.reddit.com/r/AndroidNativePorts/" target="_blank" rel="noopener noreferrer">r/AndroidNativePorts</a> <span class="desc">Native PC & console game ports on Android</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <!-- APKS -->
+                <section class="category-section" id="apk-stores" data-section="apk-stores">
+                    <h2 class="section-header"><span class="left"><span>📦 Android APKs - MODs / Premium</span> <span class="section-badge">5</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended Stores <span class="count">(3)</span></div>
+                                <ul>
+                                    <li data-id="apkvision" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://apkvision.org/" target="_blank" rel="noopener noreferrer">APKVision</a> <span class="tag-pill tag-new">NEW</span></span>
+                                            <span class="desc">Clean and modded Android games, direct OBB caches, fan ports, and premium APKs</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="liteapks" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://liteapks.com/" target="_blank" rel="noopener noreferrer">LiteAPKs</a></span>
+                                            <span class="desc">#1 MOD APK source (modded games & premium unlocked)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="modyolo" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://modyolo.com/" target="_blank" rel="noopener noreferrer">MODYOLO</a></span>
+                                            <span class="desc">Free MOD APK games & premium apps (huge library, fast updates)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Search Tools <span class="count">(2)</span></div>
+                                <ul>
+                                    <li data-id="virgil">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://virgil.samidy.com/Mobile/#gsc.tab=0" target="_blank" rel="noopener noreferrer">Virgil APK Search</a></span>
+                                            <span class="desc">Aggregated search (searches 50+ APK sites at once)</span>
+                                            <span class="desc-warning">⚠️ Use uBlock Origin</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="hizsearch-apk">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a></span>
+                                            <span class="desc">PC game search for Winlator / GameNative / GameHub (find Steam games to emulate)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- SOCIAL -->
-        <section class="category-section" id="social" data-section="social">
-            <h2><span class="left"><span class="icon">👾</span> Social Media <span class="section-badge">2</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(2)</span></div>
-                    <ul>
-                        <li data-id="stoat"><span class="star">★</span> <a href="https://stoat.chat/" target="_blank" rel="noopener noreferrer">Stoat</a> <span class="desc">Open-Source, Privacy-First Discord Alternative</span></li>
-                        <li class="sub-item" data-id="autofeeds"><span class="star">★</span> <a href="https://automod.vale.rocks/blog/introducing-autofeeds" target="_blank" rel="noopener noreferrer">AutoFeeds</a> <span class="desc">Syndication bot for Stoat (RSS/Atom/JSON feeds)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <!-- GAMING INDEXES -->
+                <section class="category-section" id="gaming-indexes" data-section="gaming-indexes">
+                    <h2 class="section-header"><span class="left"><span>🔍 Gaming Indexes & Native Ports</span> <span class="section-badge">6</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(3)</span></div>
+                                <ul>
+                                    <li data-id="fe2rr-napl" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://fe2rr.github.io/index.html" target="_blank" rel="noopener noreferrer">The Ports Vault (NAPL)</a> <span class="tag-pill tag-new">NEW</span></span>
+                                            <span class="desc">Native Android Port List (Curated catalog and tracker for native PC/console game ports running on Android like Fallout, Diablo, NFS, Morrowind, GTA)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="gaming-emporium" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://thegamingemporium.com/" target="_blank" rel="noopener noreferrer">The Gaming Emporium</a></span>
+                                            <span class="desc">Curated archive of fan decompilations, PC ports, open-source projects, modern recreations from r/SteamDeck community</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="hizsearch" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://hizsearch.pages.dev/" target="_blank" rel="noopener noreferrer">HizSearch</a></span>
+                                            <span class="desc">PC game search engine for Winlator / GameNative (best for Steam games to emulate on Android)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Other Indexes <span class="count">(3)</span></div>
+                                <ul>
+                                    <li data-id="rohan-archive">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://archive.org/details/@rohankar" target="_blank" rel="noopener noreferrer">RohanKar Archive</a></span>
+                                            <span class="desc">PC Game index on Archive.org</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="torrminatorr">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://forum.torrminatorr.com/" target="_blank" rel="noopener noreferrer">Torrminatorr</a></span>
+                                            <span class="desc">Forum & index for PC game downloads, repacks, direct links</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="steamrip">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://steamrip.com/" target="_blank" rel="noopener noreferrer">SteamRip</a></span>
+                                            <span class="desc">Direct download links for pre-installed PC games, no setup required</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- SPORTS -->
-        <section class="category-section" id="sports" data-section="sports">
-            <h2><span class="left"><span class="icon">🥊</span> Sports & Live Streams <span class="section-badge">4</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(2)</span></div>
-                    <ul>
-                        <li data-id="sportsbite">
-                            <span class="star">★</span> 
-                            <a href="https://sportsbite.org/" target="_blank" rel="noopener noreferrer">Sportsbite</a> 
-                            <span class="tag-pill tag-new">NEW</span>
-                            <span class="desc">Free live sports streaming portal (Football, NBA, NFL, UFC/MMA, Boxing, F1)</span> 
-                            <span class="desc-warning">⚠️ Use an ad blocker (uBlock Origin / Brave)</span>
-                        </li>
-                        <li data-id="sherdog"><span class="star">★</span> <a href="https://www.sherdog.com" target="_blank" rel="noopener noreferrer">Sherdog</a> <span class="desc">MMA Tracking</span></li>
-                    </ul>
-                </div>
-                <div class="group">
-                    <div class="group-label other">Other <span class="count">(2)</span></div>
-                    <ul>
-                        <li data-id="boxrec"><a href="https://boxrec.com" target="_blank" rel="noopener noreferrer">BoxRec</a> <span class="desc">Boxing Tracking</span></li>
-                        <li data-id="tapology"><a href="https://tapology.com" target="_blank" rel="noopener noreferrer">Tapology</a> <span class="desc">General Combat Sports (mostly MMA)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <!-- UTILITIES & DRIVERS -->
+                <section class="category-section" id="utilities" data-section="utilities">
+                    <h2 class="section-header"><span class="left"><span>🛠️ Emulator Utilities & Driver</span> <span class="section-badge">4</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(3)</span></div>
+                                <ul>
+                                    <li data-id="adrenotools" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/whitebelyash/AdrenoToolsDrivers/releases" target="_blank" rel="noopener noreferrer">AdrenoTools Drivers</a></span>
+                                            <span class="desc">Mesa Turnip custom Vulkan drivers for Adreno 6xx/7xx</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="turniptools" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/DiskDVD/TurniptoolsA8XX/releases" target="_blank" rel="noopener noreferrer">Turniptools A8XX</a></span>
+                                            <span class="desc">Optimized Turnip drivers for newer Snapdragon 8 Gen series</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="steven-drivers" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases" target="_blank" rel="noopener noreferrer">StevenMXZ Adreno Drivers</a></span>
+                                            <span class="desc">Curated releases for Winlator & Switch emulators</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Resources <span class="count">(1)</span></div>
+                                <ul>
+                                    <li data-id="psvita-db">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://github.com/txy7795679/PSVITA-PKGJ-DATADB/blob/master/PSV_GAMES.tsv#L331" target="_blank" rel="noopener noreferrer">PS Vita DB (Vita3K)</a></span>
+                                            <span class="desc">Game ID and compatibility database</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- MEDIA -->
-        <section class="category-section" id="media" data-section="media">
-            <h2><span class="left"><span class="icon">🎬</span> Media & Entertainment <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(1)</span></div>
-                    <ul>
-                        <li data-id="ytdlnis"><span class="star">★</span> <a href="https://github.com/deniscerri/ytdlnis" target="_blank" rel="noopener noreferrer">YTDLnis</a> <span class="desc">Full-featured audio/video downloader for Android using yt-dlp (supports 1000+ sites)</span></li>
-                    </ul>
-                </div>
-                <div class="group">
-                    <div class="group-label other">Links <span class="count">(2)</span></div>
-                    <ul>
-                        <li data-id="popcorngap"><a href="https://popcorngap.com/" target="_blank" rel="noopener noreferrer">PopcornGap</a> <span class="desc">Real RT audience scores (removes studio-pushed ticket-buyer votes)</span></li>
-                        <li data-id="ytmp4"><a href="https://ytmp4.page/tliz" target="_blank" rel="noopener noreferrer">ytmp4.page</a> <span class="desc">YouTube / Video Downloader</span> <span class="desc-warning">⚠️ Use an ad blocker</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <!-- GAME MODS -->
+                <section class="category-section" id="game-mods" data-section="game-mods" data-default-collapsed="true">
+                    <h2 class="section-header"><span class="left"><span>🧩 Game Mods (Android & Emulation)</span> <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(1)</span></div>
+                                <ul>
+                                    <li data-id="augustus" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/Keriew/augustus" target="_blank" rel="noopener noreferrer">Augustus</a></span>
+                                            <span class="desc">Caesar III mod (enhanced gameplay, bug fixes, new features)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Other <span class="count">(2)</span></div>
+                                <ul>
+                                    <li data-id="last-days">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://www.moddb.com/mods/the-last-days" target="_blank" rel="noopener noreferrer">The Last Days</a></span>
+                                            <span class="desc">Mount & Blade: Warband (total conversion into Tolkien's Middle-earth)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="civ5-wiki">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://civilization-v-customisation.fandom.com/wiki/Civilization_V_Customisation_Wiki" target="_blank" rel="noopener noreferrer">Civilization V Customisation Wiki</a></span>
+                                            <span class="desc">Civ V modding hub (custom civilizations, gameplay, resources, scenarios, wonders, guides)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- AI TOOLS -->
-        <section class="category-section" id="ai" data-section="ai">
-            <h2><span class="left"><span class="icon">🤖</span> AI Tools (Mobile Browser) <span class="section-badge">6</span></span> <span class="collapse-icon">▼</span></h2>
-            <div class="section-content">
-                <div class="group">
-                    <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(3)</span></div>
-                    <ul>
-                        <li data-id="deepseek"><span class="star">★</span> <a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek</a> <span class="desc">Reasoning & coding</span></li>
-                        <li data-id="qwen"><span class="star">★</span> <a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer">Qwen Chat</a> <span class="desc">Multilingual & coding</span></li>
-                        <li data-id="zai"><span class="star">★</span> <a href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">Z.ai</a> <span class="desc">Browser only (reasoning)</span></li>
-                    </ul>
-                </div>
-                <div class="group">
-                    <div class="group-label other">Other <span class="count">(3)</span></div>
-                    <ul>
-                        <li data-id="meta-ai"><a href="https://www.meta.ai/" target="_blank" rel="noopener noreferrer">Meta AI</a> <span class="desc">Free, integrated with Meta ecosystem</span></li>
-                        <li data-id="claude"><a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a> <span class="desc">Long-context writing</span></li>
-                        <li data-id="kimi"><a href="https://www.kimi.com/" target="_blank" rel="noopener noreferrer">Kimi</a> <span class="desc">Long-context, Moonshot AI</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
+                <!-- COMMUNITY -->
+                <section class="category-section" id="community" data-section="community">
+                    <h2 class="section-header"><span class="left"><span>💬 Community & Discussion</span> <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="other">
+                                <div class="group-label other" style="border-top:none; margin-top:0; padding-top:4px;">Links <span class="count">(3)</span></div>
+                                <ul>
+                                    <li data-id="fmhy-link">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY</a></span>
+                                            <span class="desc">Parent Directory / Main Wiki</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="r-emulation">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://www.reddit.com/r/EmulationOnAndroid/" target="_blank" rel="noopener noreferrer">r/EmulationOnAndroid</a></span>
+                                            <span class="desc">The main community for Android emulation news & setups</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="r-nativeports">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="world">🌐</span> <a href="https://www.reddit.com/r/AndroidNativePorts/" target="_blank" rel="noopener noreferrer">r/AndroidNativePorts</a></span>
+                                            <span class="desc">Native PC & console game ports on Android</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <div class="footer">
-        <div class="retro-badges-row">
-            <div class="button-88x31 btn-green">ANDROID<br>POWERED</div>
-            <div class="button-88x31 btn-blue">NETSCAPE<br>TESTED</div>
-            <div class="button-88x31 btn-purple">NOTEPAD<br>CODED</div>
-            <div class="button-88x31 btn-orange">NO BLOAT<br>ZONE</div>
+                <!-- SOCIAL -->
+                <section class="category-section" id="social" data-section="social">
+                    <h2 class="section-header"><span class="left"><span>👾 Social Media</span> <span class="section-badge">2</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(2)</span></div>
+                                <ul>
+                                    <li data-id="stoat" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://stoat.chat/" target="_blank" rel="noopener noreferrer">Stoat</a></span>
+                                            <span class="desc">Open-Source, Privacy-First Discord Alternative</span>
+                                        </div>
+                                    </li>
+                                    <li class="sub-item" data-id="autofeeds" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://automod.vale.rocks/blog/introducing-autofeeds" target="_blank" rel="noopener noreferrer">AutoFeeds</a></span>
+                                            <span class="desc">Syndication bot for Stoat (RSS/Atom/JSON feeds)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SPORTS -->
+                <section class="category-section" id="sports" data-section="sports">
+                    <h2 class="section-header"><span class="left"><span>🥊 Sports & Live Streams</span> <span class="section-badge">4</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(2)</span></div>
+                                <ul>
+                                    <li data-id="sportsbite" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://sportsbite.org/" target="_blank" rel="noopener noreferrer">Sportsbite</a> <span class="tag-pill tag-new">NEW</span></span>
+                                            <span class="desc">Free live sports streaming portal (Football, NBA, NFL, UFC/MMA, Boxing, F1)</span>
+                                            <span class="desc-warning">⚠️ Use an ad blocker (uBlock Origin / Brave)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="sherdog" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://www.sherdog.com" target="_blank" rel="noopener noreferrer">Sherdog</a></span>
+                                            <span class="desc">MMA Tracking</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Other <span class="count">(2)</span></div>
+                                <ul>
+                                    <li data-id="boxrec">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://boxrec.com" target="_blank" rel="noopener noreferrer">BoxRec</a></span>
+                                            <span class="desc">Boxing Tracking</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="tapology">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://tapology.com" target="_blank" rel="noopener noreferrer">Tapology</a></span>
+                                            <span class="desc">General Combat Sports (mostly MMA)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MEDIA -->
+                <section class="category-section" id="media" data-section="media">
+                    <h2 class="section-header"><span class="left"><span>🎬 Media & Entertainment</span> <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(1)</span></div>
+                                <ul>
+                                    <li data-id="ytdlnis" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://github.com/deniscerri/ytdlnis" target="_blank" rel="noopener noreferrer">YTDLnis</a></span>
+                                            <span class="desc">Full-featured audio/video downloader for Android using yt-dlp (supports 1000+ sites)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Links <span class="count">(2)</span></div>
+                                <ul>
+                                    <li data-id="popcorngap">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://popcorngap.com/" target="_blank" rel="noopener noreferrer">PopcornGap</a></span>
+                                            <span class="desc">Real RT audience scores (removes studio-pushed ticket-buyer votes)</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="ytmp4">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://ytmp4.page/tliz" target="_blank" rel="noopener noreferrer">ytmp4.page</a></span>
+                                            <span class="desc">YouTube / Video Downloader</span>
+                                            <span class="desc-warning">⚠️ Use an ad blocker</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI TOOLS -->
+                <section class="category-section" id="ai" data-section="ai">
+                    <h2 class="section-header"><span class="left"><span>🤖 AI Tools (Mobile Browser)</span> <span class="section-badge">6</span></span> <span class="collapse-icon">▼</span></h2>
+                    <div class="section-content">
+                        <div class="section-inner">
+                            <div class="group" data-group="recommended">
+                                <div class="group-label recommended"><span class="star">★</span> Recommended <span class="count">(3)</span></div>
+                                <ul>
+                                    <li data-id="deepseek" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek</a></span>
+                                            <span class="desc">Reasoning & coding</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="qwen" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer">Qwen Chat</a></span>
+                                            <span class="desc">Multilingual & coding</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="zai" data-recommended="true">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">Z.ai</a></span>
+                                            <span class="desc">Browser only (reasoning)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group" data-group="other">
+                                <div class="group-label other">Other <span class="count">(3)</span></div>
+                                <ul>
+                                    <li data-id="meta-ai">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://www.meta.ai/" target="_blank" rel="noopener noreferrer">Meta AI</a></span>
+                                            <span class="desc">Free, integrated with Meta ecosystem</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="claude">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a></span>
+                                            <span class="desc">Long-context writing</span>
+                                        </div>
+                                    </li>
+                                    <li data-id="kimi">
+                                        <div class="item-main">
+                                            <span class="item-title-wrap"><a href="https://www.kimi.com/" target="_blank" rel="noopener noreferrer">Kimi</a></span>
+                                            <span class="desc">Long-context, Moonshot AI</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
 
-        <div>
-            VISITOR NO: 
-            <span class="hit-counter-box">
-                <span class="digit">0</span>
-                <span class="digit">4</span>
-                <span class="digit">9</span>
-                <span class="digit">1</span>
-                <span class="digit">8</span>
-                <span class="digit">3</span>
-            </span>
-        </div>
+        <footer class="footer">
+            <div class="retro-badges-row">
+                <div class="button-88x31 btn-green">ANDROID<br>POWERED</div>
+                <div class="button-88x31 btn-blue">NETSCAPE<br>TESTED</div>
+                <div class="button-88x31 btn-purple">NOTEPAD<br>CODED</div>
+                <div class="button-88x31 btn-orange">NO BLOAT<br>ZONE</div>
+            </div>
 
-        <p style="margin-top:12px;">
-            [ <a href="#emulators">Emulators</a> ] · [ <a href="#gaming-indexes">Ports</a> ] · [ <a href="#utilities">Drivers</a> ] · [ <a href="#sports">Sports</a> ] · [ <a href="https://fmhy.net/" target="_blank">FMHY Hub</a> ]
-        </p>
-        <p>AHY (Android Heck Yeah). Speed, zero telemetry, open preservation.</p>
+            <div>
+                VISITOR NO:
+                <span class="hit-counter-box">
+                    <span class="digit">0</span>
+                    <span class="digit">4</span>
+                    <span class="digit">9</span>
+                    <span class="digit">1</span>
+                    <span class="digit">8</span>
+                    <span class="digit">3</span>
+                </span>
+            </div>
+
+            <p style="margin-top:12px;">
+                <a href="#emulators">Emulators</a> · <a href="#gaming-indexes">Ports</a> · <a href="#utilities">Drivers</a> · <a href="#sports">Sports</a> · <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY Hub</a>
+            </p>
+            <p>AHY (Android Heck Yeah). Speed, zero telemetry, open preservation.</p>
+        </footer>
     </div>
 
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">▲</button>
@@ -919,7 +1510,7 @@
                 const gain = audioCtx.createGain();
                 osc.type = type;
                 osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-                gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.07, audioCtx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
@@ -929,146 +1520,87 @@
         }
 
         const sfxBtn = document.getElementById('sfx-toggle');
-        sfxBtn.textContent = sfxEnabled ? '🔊 SFX: ON' : '🔈 SFX: OFF';
+        const updateSfxUI = () => {
+            sfxBtn.textContent = sfxEnabled ? '🔊 SFX: ON' : '🔈 SFX: OFF';
+            sfxBtn.classList.toggle('active', sfxEnabled);
+        };
+        updateSfxUI();
         sfxBtn.addEventListener('click', () => {
             sfxEnabled = !sfxEnabled;
             localStorage.setItem('ahy-sfx', sfxEnabled);
-            sfxBtn.textContent = sfxEnabled ? '🔊 SFX: ON' : '🔈 SFX: OFF';
+            updateSfxUI();
             if (sfxEnabled) playRetroBeep(580, 'triangle', 0.1);
         });
 
         const crtToggle = document.getElementById('crt-toggle');
-        const isCrt = localStorage.getItem('ahy-crt') === 'true';
-        document.documentElement.setAttribute('data-crt', isCrt);
-        crtToggle.style.color = isCrt ? 'var(--retro-green)' : 'inherit';
+        let isCrt = localStorage.getItem('ahy-crt') === 'true';
+        const updateCrtUI = () => {
+            document.documentElement.setAttribute('data-crt', isCrt);
+            crtToggle.classList.toggle('active', isCrt);
+        };
+        updateCrtUI();
         crtToggle.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-crt') === 'true';
-            const next = !current;
-            document.documentElement.setAttribute('data-crt', next);
-            localStorage.setItem('ahy-crt', next);
-            crtToggle.style.color = next ? 'var(--retro-green)' : 'inherit';
-            playRetroBeep(next ? 880 : 330, 'sawtooth');
+            isCrt = !isCrt;
+            localStorage.setItem('ahy-crt', isCrt);
+            updateCrtUI();
+            playRetroBeep(isCrt ? 880 : 330, 'sawtooth');
         });
 
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
-        const savedTheme = localStorage.getItem('uhy-theme') || 'dark';
-        html.setAttribute('data-theme', savedTheme);
-        themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
-
+        let currentTheme = localStorage.getItem('uhy-theme') || 'dark';
+        const updateThemeUI = () => {
+            html.setAttribute('data-theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'dark' ? '🌙 Dark' : '☀️ Light';
+        };
+        updateThemeUI();
         themeToggle.addEventListener('click', () => {
-            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('uhy-theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('uhy-theme', currentTheme);
+            updateThemeUI();
             playRetroBeep(520, 'sine');
         });
 
-        const sections = document.querySelectorAll('.category-section');
-        sections.forEach(section => {
+        // Collapsible Sections (Category Sections + Toolbox)
+        const collapsibleSections = document.querySelectorAll('.category-section, .toolbox-panel');
+        const categorySections = document.querySelectorAll('.category-section');
+
+        collapsibleSections.forEach(section => {
             const id = section.dataset.section;
-            const content = section.querySelector('.section-content');
             const stored = localStorage.getItem(`uhy-collapsed-${id}`);
             const defaultCollapsed = section.dataset.defaultCollapsed === 'true';
-            
-            if (stored !== null) {
-                if (stored === 'true') { section.classList.add('collapsed'); content.style.maxHeight = '0px'; }
-                else { content.style.maxHeight = content.scrollHeight + 'px'; }
-            } else {
-                if (defaultCollapsed) { section.classList.add('collapsed'); content.style.maxHeight = '0px'; }
-                else { content.style.maxHeight = content.scrollHeight + 'px'; }
-            }
+            const shouldCollapse = stored !== null ? stored === 'true' : defaultCollapsed;
 
-            section.querySelector('h2').addEventListener('click', () => {
+            if (shouldCollapse) section.classList.add('collapsed');
+
+            section.querySelector('.section-header').addEventListener('click', () => {
                 section.classList.toggle('collapsed');
                 const isCollapsed = section.classList.contains('collapsed');
                 localStorage.setItem(`uhy-collapsed-${id}`, isCollapsed);
-                content.style.maxHeight = isCollapsed ? '0px' : content.scrollHeight + 'px';
                 playRetroBeep(isCollapsed ? 300 : 450, 'square', 0.04);
             });
         });
 
         document.getElementById('expand-all').addEventListener('click', () => {
-            sections.forEach(section => {
+            collapsibleSections.forEach(section => {
                 section.classList.remove('collapsed');
-                const content = section.querySelector('.section-content');
-                content.style.maxHeight = content.scrollHeight + 'px';
                 localStorage.setItem(`uhy-collapsed-${section.dataset.section}`, 'false');
             });
             playRetroBeep(650, 'triangle');
         });
 
         document.getElementById('collapse-all').addEventListener('click', () => {
-            sections.forEach(section => {
+            collapsibleSections.forEach(section => {
                 section.classList.add('collapsed');
-                section.querySelector('.section-content').style.maxHeight = '0px';
                 localStorage.setItem(`uhy-collapsed-${section.dataset.section}`, 'true');
             });
             playRetroBeep(280, 'square');
         });
 
-        const searchBar = document.getElementById('search-bar');
-        const resultCount = document.getElementById('result-count');
-        const noResults = document.getElementById('no-results');
-
-        searchBar.addEventListener('input', function (e) {
-            const q = e.target.value.toLowerCase().trim();
-            let totalVisible = 0;
-
-            sections.forEach(section => {
-                let vis = 0;
-                const groups = section.querySelectorAll('.group');
-                groups.forEach(group => {
-                    let groupVis = 0;
-                    const items = group.querySelectorAll('li');
-                    items.forEach(item => {
-                        const ok = item.textContent.toLowerCase().includes(q);
-                        item.classList.toggle('hidden', !ok && q !== '');
-                        if (ok || q === '') groupVis++;
-                    });
-                    const label = group.querySelector('.group-label');
-                    const isHidden = groupVis === 0 && q !== '';
-                    group.classList.toggle('hidden', isHidden);
-                    if (label) label.classList.toggle('hidden', isHidden);
-                    vis += groupVis;
-                });
-                totalVisible += vis;
-                section.classList.toggle('hidden', vis === 0 && q !== '');
-                if (vis > 0 && q !== '') {
-                    section.classList.remove('collapsed');
-                    const c = section.querySelector('.section-content');
-                    c.style.maxHeight = c.scrollHeight + 'px';
-                }
-            });
-
-            if (q !== '') {
-                resultCount.textContent = `[FOUND: ${totalVisible} MATCH${totalVisible !== 1 ? 'ES' : ''}]`;
-                noResults.style.display = totalVisible === 0 ? 'block' : 'none';
-            } else {
-                resultCount.textContent = '';
-                noResults.style.display = 'none';
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === '/' && document.activeElement !== searchBar) { 
-                e.preventDefault(); 
-                searchBar.focus(); 
-                playRetroBeep(700, 'square', 0.03);
-            }
-            if (e.key === 'Escape') { 
-                searchBar.value = ''; 
-                searchBar.dispatchEvent(new Event('input')); 
-                searchBar.blur(); 
-            }
-        });
-
+        // Bookmarks Setup
         let bookmarks = JSON.parse(localStorage.getItem('ahy-bookmarks') || '[]');
         const favCountSpan = document.getElementById('fav-count');
-
-        function updateFavCount() {
-            favCountSpan.textContent = bookmarks.length;
-        }
+        function updateFavCount() { favCountSpan.textContent = bookmarks.length; }
 
         document.querySelectorAll('main li').forEach(li => {
             const id = li.dataset.id || li.textContent.trim().slice(0, 20);
@@ -1076,12 +1608,13 @@
 
             const actions = document.createElement('div');
             actions.className = 'item-actions';
-            
+
             const starBtn = document.createElement('button');
             starBtn.className = 'action-icon' + (bookmarks.includes(id) ? ' bookmarked' : '');
             starBtn.innerHTML = '🔖';
             starBtn.title = 'Save to Bookmarks';
-            
+            starBtn.setAttribute('aria-label', 'Save to Bookmarks');
+
             starBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -1096,6 +1629,7 @@
                 }
                 localStorage.setItem('ahy-bookmarks', JSON.stringify(bookmarks));
                 updateFavCount();
+                if (showingFavsOnly) applyFilters();
             });
 
             actions.appendChild(starBtn);
@@ -1103,65 +1637,172 @@
         });
         updateFavCount();
 
-        let showingFavsOnly = false;
+        // Unified Search + Recommended Filter + Bookmarks Filter
+        const searchBar = document.getElementById('search-bar');
+        const searchClear = document.getElementById('search-clear');
+        const filterStatus = document.getElementById('filter-status');
+        const emptyState = document.getElementById('empty-state');
+        const emptyTitle = document.getElementById('empty-title');
+        const emptySubtitle = document.getElementById('empty-subtitle');
+        const recBtn = document.getElementById('rec-filter-btn');
         const favsBtn = document.getElementById('favs-filter-btn');
-        favsBtn.addEventListener('click', () => {
-            showingFavsOnly = !showingFavsOnly;
-            favsBtn.style.color = showingFavsOnly ? 'var(--star-color)' : 'inherit';
-            
-            sections.forEach(section => {
-                let vis = 0;
-                section.querySelectorAll('li').forEach(li => {
-                    const isBookmarked = bookmarks.includes(li.dataset.id);
-                    const show = !showingFavsOnly || isBookmarked;
-                    li.classList.toggle('hidden', !show);
-                    if (show) vis++;
+
+        let showingRecOnly = false;
+        let showingFavsOnly = false;
+
+        function applyFilters() {
+            const q = searchBar.value.toLowerCase().trim();
+            const hasFilter = q !== '' || showingRecOnly || showingFavsOnly;
+            searchClear.classList.toggle('visible', q !== '');
+
+            let totalVisible = 0;
+
+            categorySections.forEach(section => {
+                let sectionVisible = 0;
+                const groups = section.querySelectorAll('.group');
+
+                groups.forEach(group => {
+                    let groupVisible = 0;
+                    const items = group.querySelectorAll('li');
+
+                    items.forEach(item => {
+                        const matchesQuery = q === '' || item.textContent.toLowerCase().includes(q);
+                        const matchesRec = !showingRecOnly || item.dataset.recommended === 'true';
+                        const matchesFav = !showingFavsOnly || bookmarks.includes(item.dataset.id);
+                        const ok = matchesQuery && matchesRec && matchesFav;
+
+                        item.classList.toggle('hidden', !ok);
+                        if (ok) groupVisible++;
+                    });
+
+                    group.classList.toggle('hidden', groupVisible === 0);
+                    sectionVisible += groupVisible;
                 });
-                section.classList.toggle('hidden', showingFavsOnly && vis === 0);
-                if (showingFavsOnly && vis > 0) {
+
+                totalVisible += sectionVisible;
+                section.classList.toggle('hidden', hasFilter && sectionVisible === 0);
+
+                if (hasFilter && sectionVisible > 0) {
                     section.classList.remove('collapsed');
-                    section.querySelector('.section-content').style.maxHeight = '1000px';
                 }
             });
+
+            if (hasFilter) {
+                const activeModes = [];
+                if (q !== '') activeModes.push(`Search: "${searchBar.value.trim()}"`);
+                if (showingRecOnly) activeModes.push('Recommended Only');
+                if (showingFavsOnly) activeModes.push('Bookmarks');
+
+                filterStatus.textContent = `Showing ${totalVisible} result${totalVisible !== 1 ? 's' : ''} (${activeModes.join(' · ')})`;
+                filterStatus.classList.add('visible');
+
+                if (totalVisible === 0) {
+                    emptyState.classList.add('visible');
+                    if (showingFavsOnly && bookmarks.length === 0) {
+                        emptyTitle.textContent = 'No bookmarks saved yet';
+                        emptySubtitle.textContent = 'Click the 🔖 icon on any entry to save it here for quick access.';
+                    } else {
+                        emptyTitle.textContent = 'No matching entries found';
+                        emptySubtitle.textContent = 'Try keywords like "DroidDeck", "Xendroid+", "Turnip", "PS2", or press ESC to clear.';
+                    }
+                } else {
+                    emptyState.classList.remove('visible');
+                }
+            } else {
+                filterStatus.classList.remove('visible');
+                emptyState.classList.remove('visible');
+            }
+        }
+
+        searchBar.addEventListener('input', applyFilters);
+
+        searchClear.addEventListener('click', () => {
+            searchBar.value = '';
+            applyFilters();
+            searchBar.focus();
+        });
+
+        recBtn.addEventListener('click', () => {
+            showingRecOnly = !showingRecOnly;
+            recBtn.classList.toggle('star-active', showingRecOnly);
+            applyFilters();
+            playRetroBeep(showingRecOnly ? 640 : 420, 'triangle');
+        });
+
+        favsBtn.addEventListener('click', () => {
+            showingFavsOnly = !showingFavsOnly;
+            favsBtn.classList.toggle('star-active', showingFavsOnly);
+            applyFilters();
             playRetroBeep(showingFavsOnly ? 600 : 400, 'square');
         });
 
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchBar) {
+                e.preventDefault();
+                searchBar.focus();
+                playRetroBeep(700, 'square', 0.03);
+            }
+            if (e.key === 'Escape' && (document.activeElement === searchBar || searchBar.value !== '')) {
+                searchBar.value = '';
+                applyFilters();
+                searchBar.blur();
+            }
+        });
+
+        // Surprise Me
         document.getElementById('surprise-btn').addEventListener('click', () => {
-            const allItems = Array.from(document.querySelectorAll('main li:not(.sub-item)'));
-            if (!allItems.length) return;
-            const randomItem = allItems[Math.floor(Math.random() * allItems.length)];
+            const visibleItems = Array.from(document.querySelectorAll('main li:not(.sub-item):not(.hidden)'));
+            const pool = visibleItems.length ? visibleItems : Array.from(document.querySelectorAll('main li:not(.sub-item)'));
+            if (!pool.length) return;
+
+            const randomItem = pool[Math.floor(Math.random() * pool.length)];
             const section = randomItem.closest('.category-section');
-            
-            section.classList.remove('collapsed');
-            section.querySelector('.section-content').style.maxHeight = '2000px';
-            
+            section.classList.remove('hidden', 'collapsed');
+
             document.querySelectorAll('.highlighted-pick').forEach(el => el.classList.remove('highlighted-pick'));
             randomItem.classList.add('highlighted-pick');
             randomItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
             playRetroBeep(850, 'triangle', 0.12);
         });
 
+        // Scroll-Spy for Sidebar & Mobile Nav
+        const navLinks = document.querySelectorAll('.sidebar-link, .nav-chip');
+        const spyTargets = document.querySelectorAll('#retro-toolbox, .category-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, { rootMargin: '-150px 0px -65% 0px', threshold: 0 });
+
+        spyTargets.forEach(el => observer.observe(el));
+
+        // Retro Toolbox Databases
         const formatDatabase = {
-            ps2: "⚡ Best: <b>.chd (V5 CD/DVD)</b> via <i>chdman</i>.<br>Saves ~30-50% storage over .iso without loss. Works with ARMSX2 & NetherSX2.",
-            gc_wii: "⚡ Best: <b>.rvz</b> using Dolphin's built-in converter (LZMA2 / 128KB block).<br>Saves up to 70% space vs raw .iso, retains scrubber data.",
+            ps2: "⚡ Best: <b>.chd (V5 CD/DVD)</b> via <i>chdman</i>.<br>Saves ~30–50% storage over .iso without loss. Works with ARMSX2 & NetherSX2.",
+            gc_wii: "⚡ Best: <b>.rvz</b> using Dolphin's built-in converter (LZMA2 / 128KB block).<br>Saves up to 70% space vs raw .iso.",
             psp: "⚡ Best: <b>.chd</b> or <b>.cso / .zso</b>.<br>PPSSPP handles fast CSO/CHD decompression. Compress via maxcso.",
             ps1: "⚡ Best: <b>.chd</b>.<br>Combines multi-track .bin + .cue into one file. Works in RetroArch cores.",
             switch: "⚡ Best: <b>.nsp</b> (base) + <b>.nsz</b> (compressed via nsz tool).<br>Eden Emu loads compressed .nsz files.",
             vita: "⚡ Best: <b>NoNpDrm folder / .zip</b> via Vita3K database.<br>Direct decryption saves time and avoids installation errors.",
-            pc: "⚡ Best: <b>Pre-installed GOG / SteamRip folders</b>.<br>Skip setup installers inside Winlator/GameNative to save container space."
+            pc: "⚡ Best: <b>Pre-installed GOG / SteamRip folders</b>.<br>Skip setup installers inside Winlator/GameNative/DroidDeck to save container space."
         };
 
         document.getElementById('console-select').addEventListener('change', (e) => {
             const val = e.target.value;
-            const out = document.getElementById('format-output');
-            out.innerHTML = formatDatabase[val] || "Select a console to see optimal format and compression advice to save phone storage.";
+            document.getElementById('format-output').innerHTML = formatDatabase[val] || "Select a console to see optimal format and compression advice to save phone storage.";
             if (val) playRetroBeep(520, 'sine', 0.05);
         });
 
         const driverDatabase = {
-            sd8gen3: "⚡ <b>Recommendation:</b> Turniptools A8XX / Mesa Turnip v24.3.0+.<br>Target Vulkan 1.3; runs PC titles in Winlator Ludashi Plus.",
-            sd8gen2: "⚡ <b>Recommendation:</b> Mesa Turnip v24.1.0 Revision 17 or v24.2.0.<br>Stable baseline across Switch (Eden) and Winlator.",
-            sd8gen1: "⚡ <b>Recommendation:</b> Mesa Turnip v24.0.0 - v24.1.0.<br>Set Winlator to DXVK 2.2 and use 720p to control heat.",
+            sd8gen3: "⚡ <b>Recommendation:</b> Turniptools A8XX / Mesa Turnip v24.3.0+.<br>Target Vulkan 1.3; runs PC titles in Winlator & DroidDeck.",
+            sd8gen2: "⚡ <b>Recommendation:</b> Mesa Turnip v24.1.0 Revision 17 or v24.2.0.<br>Stable baseline across Switch (Eden), Winlator, and DroidDeck.",
+            sd8gen1: "⚡ <b>Recommendation:</b> Mesa Turnip v24.0.0 – v24.1.0.<br>Set Winlator to DXVK 2.2 and use 720p to control heat.",
             sd870: "⚡ <b>Recommendation:</b> Mesa Turnip Driver v23.3.0 or v24.0.0 (Adreno 650).<br>Stable shader compilation in Vita3K & Dolphin.",
             sd7gen: "⚡ <b>Recommendation:</b> Turnip v24.x for Adreno 725.<br>Performs close to 8+ Gen 1; keep Turnip cache enabled.",
             mali: "⚠️ <b>Mali / Dimensity / Tensor:</b><br>Turnip drivers only work on Qualcomm Adreno hardware. Use default Vulkan and VirGL drivers."
@@ -1169,11 +1810,11 @@
 
         document.getElementById('gpu-select').addEventListener('change', (e) => {
             const val = e.target.value;
-            const out = document.getElementById('driver-output');
-            out.innerHTML = driverDatabase[val] || "Select your processor to find the best Mesa Turnip driver version.";
+            document.getElementById('driver-output').innerHTML = driverDatabase[val] || "Select your processor to find the best Mesa Turnip driver version.";
             if (val) playRetroBeep(480, 'sine', 0.05);
         });
 
+        // Back to Top
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             backToTop.classList.toggle('visible', window.scrollY > 350);
