@@ -208,6 +208,7 @@
             display: flex;
             gap: 6px;
             align-items: center;
+            flex-wrap: wrap;
         }
         .ui-btn {
             background: var(--surface-color);
@@ -239,6 +240,54 @@
             background: var(--star-soft);
             border-color: var(--star-color);
             color: var(--star-color);
+        }
+
+        /* Site Tab Switcher */
+        .site-tabs {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .site-tab-btn {
+            background: var(--surface-color);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 7px 14px;
+            font-size: 0.86em;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: var(--sans-font);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.15s;
+        }
+        .site-tab-btn:hover {
+            color: var(--text-color);
+            border-color: var(--accent-color);
+            background: var(--card-bg-hover);
+        }
+        .site-tab-btn.active {
+            background: var(--accent-soft);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        .tab-count-pill {
+            font-family: var(--pixel-font);
+            font-size: 0.78em;
+            padding: 1px 6px;
+            border-radius: 999px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+        .site-tab-btn.active .tab-count-pill {
+            color: var(--accent-color);
+            border-color: rgba(88, 166, 255, 0.35);
         }
 
         /* Integrated Search + Toolbar */
@@ -364,7 +413,7 @@
 
         .sidebar {
             position: sticky;
-            top: 132px;
+            top: 182px;
             background: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
@@ -413,13 +462,13 @@
         }
 
         /* Collapsible Toolbox & Sections */
-        .category-section, .toolbox-panel {
+        .category-section, .toolbox-panel, .feed-panel {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             margin-bottom: 16px;
             box-shadow: var(--shadow);
-            scroll-margin-top: 138px;
+            scroll-margin-top: 188px;
         }
         .toolbox-panel {
             border-color: rgba(88, 166, 255, 0.45);
@@ -468,7 +517,6 @@
         }
         .collapsed .collapse-icon { transform: rotate(-90deg); }
 
-        /* CSS Grid smooth collapse (no height clipping bugs) */
         .section-content {
             display: grid;
             grid-template-rows: 1fr;
@@ -620,6 +668,9 @@
             text-transform: uppercase;
         }
         .tag-new { background: var(--star-color); color: #0b0f14; }
+        .tag-mod { background: rgba(63, 185, 80, 0.18); color: var(--retro-green); border: 1px solid rgba(63, 185, 80, 0.4); }
+        .tag-cat { background: var(--accent-soft); color: var(--accent-color); border: 1px solid rgba(88, 166, 255, 0.3); }
+        .tag-ver { background: var(--bg-color); color: var(--text-muted); border: 1px solid var(--border-color); }
 
         .desc {
             color: var(--text-muted);
@@ -633,6 +684,23 @@
             border-radius: 4px;
             font-size: 0.8em;
             font-weight: 600;
+        }
+
+        .inline-tab-link {
+            font-size: 0.8em;
+            font-family: var(--pixel-font);
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: var(--accent-soft);
+            color: var(--accent-color);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .inline-tab-link:hover {
+            border-color: var(--accent-color);
+            background: var(--card-bg-hover);
         }
 
         .item-actions {
@@ -651,13 +719,158 @@
             opacity: 0.65;
             transition: opacity 0.15s, background-color 0.15s, color 0.15s;
         }
-        li:hover .action-icon, .action-icon.bookmarked { opacity: 1; }
+        li:hover .action-icon, .feed-card:hover .action-icon, .action-icon.bookmarked { opacity: 1; }
         .action-icon:hover {
             background: var(--surface-color);
             border-color: var(--border-color);
             color: var(--star-color);
         }
         .action-icon.bookmarked { color: var(--star-color); }
+
+        /* APKVision Feed Tab */
+        #apkvision-feed-view {
+            margin-top: 18px;
+        }
+        .feed-header-box {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+        }
+        .feed-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .feed-header-top h2 {
+            margin: 0 0 4px;
+            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .feed-meta {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        .feed-controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+        .feed-filter-pills {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .feed-sort-select {
+            background: var(--input-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 6px 10px;
+            font-family: var(--sans-font);
+            font-size: 0.84em;
+            outline: none;
+        }
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 12px;
+        }
+        .feed-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 14px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            box-shadow: var(--shadow);
+            transition: border-color 0.15s, background-color 0.15s;
+        }
+        .feed-card:hover {
+            background: var(--card-bg-hover);
+            border-color: var(--accent-color);
+        }
+        .feed-thumb {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+        .feed-thumb-fallback {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(88, 166, 255, 0.35);
+            color: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--pixel-font);
+            font-weight: 700;
+            font-size: 1.05em;
+            flex-shrink: 0;
+        }
+        .feed-card-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .feed-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .feed-card-title {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.96em;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+        .feed-card-title:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+        .feed-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 6px;
+        }
+        .feed-card-desc {
+            margin: 6px 0 0;
+            font-size: 0.83em;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .feed-card-date {
+            margin-top: 7px;
+            font-size: 0.76em;
+            font-family: var(--pixel-font);
+            color: var(--text-muted);
+        }
 
         .hidden { display: none !important; }
 
@@ -773,7 +986,7 @@
                 margin-top: 8px;
             }
             .sidebar { display: none; }
-            .category-section, .toolbox-panel { scroll-margin-top: 155px; }
+            .category-section, .toolbox-panel { scroll-margin-top: 200px; }
         }
         @media (max-width: 640px) {
             .container { padding: 0 12px; }
@@ -781,6 +994,7 @@
             .search-input { padding-right: 38px; }
             .search-clear { right: 8px; }
             li.sub-item { margin-left: 12px; }
+            .feed-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -789,7 +1003,7 @@
     <div class="status-banner">
         <div class="container status-inner">
             <span class="ticker-badge">Archive Update</span>
-            <span class="status-text">Added <strong>DroidDeck</strong> and <strong>Xendroid+</strong>, starred <strong>hakuX</strong>, and moved <strong>XenDroid</strong> to Other Emulators. Press <strong>/</strong> anytime to search.</span>
+            <span class="status-text">Added the automated <strong>APKVision Feed</strong> tab and made <strong>APKVision</strong> the sole recommended APK source. Press <strong>/</strong> anytime to search.</span>
         </div>
     </div>
 
@@ -799,7 +1013,7 @@
                 <div class="logo-wrap">
                     <div class="retro-avatar">AH</div>
                     <div class="title-block">
-                        <h1>AHY <span class="accent">|</span> Android Heck Yeah <span class="badge-retro">v2.6</span></h1>
+                        <h1>AHY <span class="accent">|</span> Android Heck Yeah <span class="badge-retro">v2.7</span></h1>
                         <p class="subtitle">Android extension to <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY</a> · <span class="star">★</span> Recommended · 🌐 Resource</p>
                     </div>
                 </div>
@@ -810,6 +1024,15 @@
                 </div>
             </div>
 
+            <div class="site-tabs" role="tablist" aria-label="Site Views">
+                <button class="site-tab-btn active" id="tab-directory" role="tab" aria-selected="true" data-tab="directory">
+                    📂 Directory
+                </button>
+                <button class="site-tab-btn" id="tab-apkvision" role="tab" aria-selected="false" data-tab="apkvision">
+                    📥 APKVision Feed <span class="tab-count-pill" id="feed-tab-count">0</span>
+                </button>
+            </div>
+
             <div class="header-search-row">
                 <div class="search-container">
                     <span class="search-icon">🔍</span>
@@ -817,7 +1040,7 @@
                     <button class="search-clear" id="search-clear" aria-label="Clear search" title="Clear search">✕</button>
                     <span class="search-hint">/</span>
                 </div>
-                <div class="toolbar">
+                <div class="toolbar" id="directory-toolbar">
                     <button class="ui-btn" id="rec-filter-btn" title="Show only starred recommendations">★ Recommended Only</button>
                     <button class="ui-btn" id="favs-filter-btn" title="Show saved bookmarks">🔖 Bookmarks (<span id="fav-count">0</span>)</button>
                     <button class="ui-btn" id="surprise-btn" title="Jump to a random entry">🎲 Surprise Me</button>
@@ -828,7 +1051,7 @@
 
             <div class="filter-status" id="filter-status"></div>
 
-            <nav class="mobile-nav" aria-label="Quick category navigation">
+            <nav class="mobile-nav" id="mobile-nav" aria-label="Quick category navigation">
                 <a class="nav-chip" href="#retro-toolbox">🧰 Toolbox</a>
                 <a class="nav-chip" href="#emulators">🎮 Emulators</a>
                 <a class="nav-chip" href="#apk-stores">📦 APKs & MODs</a>
@@ -845,13 +1068,13 @@
     </header>
 
     <div class="container">
-        <div class="layout-grid">
+        <div class="layout-grid" id="directory-view">
             <aside class="sidebar" aria-label="Directory sections">
                 <div class="sidebar-title">Categories</div>
                 <nav class="sidebar-nav">
                     <a class="sidebar-link" href="#retro-toolbox"><span>🧰 Retro Toolbox</span><span class="sidebar-count">2</span></a>
                     <a class="sidebar-link" href="#emulators"><span>🎮 Emulators</span><span class="sidebar-count">26</span></a>
-                    <a class="sidebar-link" href="#apk-stores"><span>📦 APKs & MODs</span><span class="sidebar-count">5</span></a>
+                    <a class="sidebar-link" href="#apk-stores"><span>📦 APKs & MODs</span><span class="sidebar-count">3</span></a>
                     <a class="sidebar-link" href="#gaming-indexes"><span>🔍 Game Indexes</span><span class="sidebar-count">6</span></a>
                     <a class="sidebar-link" href="#utilities"><span>🛠️ Drivers & Tools</span><span class="sidebar-count">4</span></a>
                     <a class="sidebar-link" href="#game-mods"><span>🧩 Game Mods</span><span class="sidebar-count">3</span></a>
@@ -1089,28 +1312,17 @@
 
                 <!-- APKS -->
                 <section class="category-section" id="apk-stores" data-section="apk-stores">
-                    <h2 class="section-header"><span class="left"><span>📦 Android APKs - MODs / Premium</span> <span class="section-badge">5</span></span> <span class="collapse-icon">▼</span></h2>
+                    <h2 class="section-header"><span class="left"><span>📦 Android APKs - MODs / Premium</span> <span class="section-badge">3</span></span> <span class="collapse-icon">▼</span></h2>
                     <div class="section-content">
                         <div class="section-inner">
                             <div class="group" data-group="recommended">
-                                <div class="group-label recommended"><span class="star">★</span> Recommended Stores <span class="count">(3)</span></div>
+                                <div class="group-label recommended"><span class="star">★</span> Recommended Store <span class="count">(1)</span></div>
                                 <ul>
                                     <li data-id="apkvision" data-recommended="true">
                                         <div class="item-main">
-                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://apkvision.org/" target="_blank" rel="noopener noreferrer">APKVision</a> <span class="tag-pill tag-new">NEW</span></span>
+                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://apkvision.org/" target="_blank" rel="noopener noreferrer">APKVision</a></span>
                                             <span class="desc">Clean and modded Android games, direct OBB caches, fan ports, and premium APKs</span>
-                                        </div>
-                                    </li>
-                                    <li data-id="liteapks" data-recommended="true">
-                                        <div class="item-main">
-                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://liteapks.com/" target="_blank" rel="noopener noreferrer">LiteAPKs</a></span>
-                                            <span class="desc">#1 MOD APK source (modded games & premium unlocked)</span>
-                                        </div>
-                                    </li>
-                                    <li data-id="modyolo" data-recommended="true">
-                                        <div class="item-main">
-                                            <span class="item-title-wrap"><span class="star">★</span> <a href="https://modyolo.com/" target="_blank" rel="noopener noreferrer">MODYOLO</a></span>
-                                            <span class="desc">Free MOD APK games & premium apps (huge library, fast updates)</span>
+                                            <button type="button" class="inline-tab-link" id="open-apkvision-feed-btn">Live Feed Tab →</button>
                                         </div>
                                     </li>
                                 </ul>
@@ -1469,6 +1681,46 @@
             </main>
         </div>
 
+        <!-- SEPARATE APKVISION SCRAPER TAB VIEW -->
+        <section id="apkvision-feed-view" class="hidden" aria-label="APKVision Scraped Releases">
+            <div class="feed-header-box">
+                <div class="feed-header-top">
+                    <div>
+                        <h2>📥 APKVision Live Index <span class="tag-pill tag-cat" id="feed-status-badge">Loading</span></h2>
+                        <p class="feed-meta" id="feed-meta-text">Loading scraped releases from <code>./data/apkvision.json</code>...</p>
+                    </div>
+                    <div class="header-controls">
+                        <a class="ui-btn" href="https://apkvision.org/" target="_blank" rel="noopener noreferrer">🌐 Open APKVision.org</a>
+                        <button class="ui-btn" id="feed-refresh-btn">🔄 Reload Feed</button>
+                    </div>
+                </div>
+
+                <div class="feed-controls-bar">
+                    <div class="feed-filter-pills" id="feed-filter-pills">
+                        <button class="ui-btn active" data-feed-filter="all">All</button>
+                        <button class="ui-btn" data-feed-filter="games">🎮 Games</button>
+                        <button class="ui-btn" data-feed-filter="apps">📱 Apps</button>
+                        <button class="ui-btn" data-feed-filter="mod">🧩 MODs</button>
+                        <button class="ui-btn" data-feed-filter="full">💎 Full / Paid</button>
+                        <button class="ui-btn" data-feed-filter="saved">🔖 Saved (<span id="feed-saved-count">0</span>)</button>
+                    </div>
+                    <div>
+                        <select id="feed-sort" class="feed-sort-select" aria-label="Sort APKVision uploads">
+                            <option value="newest">Sort: Latest Scraped</option>
+                            <option value="title">Sort: Name (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-state" id="feed-empty-state">
+                <h3 id="feed-empty-title">No APKVision uploads loaded</h3>
+                <p id="feed-empty-subtitle">Run <code>python scripts/scrape_apkvision.py</code> or trigger the GitHub Actions scraper workflow to populate <code>data/apkvision.json</code>.</p>
+            </div>
+
+            <div class="feed-grid" id="apkvision-feed-grid"></div>
+        </section>
+
         <footer class="footer">
             <div class="retro-badges-row">
                 <div class="button-88x31 btn-green">ANDROID<br>POWERED</div>
@@ -1490,7 +1742,7 @@
             </div>
 
             <p style="margin-top:12px;">
-                <a href="#emulators">Emulators</a> · <a href="#gaming-indexes">Ports</a> · <a href="#utilities">Drivers</a> · <a href="#sports">Sports</a> · <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY Hub</a>
+                <a href="#emulators">Emulators</a> · <a href="#gaming-indexes">Ports</a> · <a href="#utilities">Drivers</a> · <a href="#apkvision-feed">APKVision Feed</a> · <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">FMHY Hub</a>
             </p>
             <p>AHY (Android Heck Yeah). Speed, zero telemetry, open preservation.</p>
         </footer>
@@ -1561,7 +1813,7 @@
             playRetroBeep(520, 'sine');
         });
 
-        // Collapsible Sections (Category Sections + Toolbox)
+        // Collapsible Sections
         const collapsibleSections = document.querySelectorAll('.category-section, .toolbox-panel');
         const categorySections = document.querySelectorAll('.category-section');
 
@@ -1597,7 +1849,7 @@
             playRetroBeep(280, 'square');
         });
 
-        // Bookmarks Setup
+        // Directory Bookmarks Setup
         let bookmarks = JSON.parse(localStorage.getItem('ahy-bookmarks') || '[]');
         const favCountSpan = document.getElementById('fav-count');
         function updateFavCount() { favCountSpan.textContent = bookmarks.length; }
@@ -1637,10 +1889,74 @@
         });
         updateFavCount();
 
-        // Unified Search + Recommended Filter + Bookmarks Filter
+        // Tab Switching (Directory vs APKVision Feed)
+        let activeTab = 'directory';
+        const directoryView = document.getElementById('directory-view');
+        const apkvisionView = document.getElementById('apkvision-feed-view');
+        const directoryToolbar = document.getElementById('directory-toolbar');
+        const mobileNav = document.getElementById('mobile-nav');
+        const tabDirectoryBtn = document.getElementById('tab-directory');
+        const tabApkVisionBtn = document.getElementById('tab-apkvision');
         const searchBar = document.getElementById('search-bar');
         const searchClear = document.getElementById('search-clear');
         const filterStatus = document.getElementById('filter-status');
+
+        function switchTab(tab, updateHash = true) {
+            activeTab = tab === 'apkvision' ? 'apkvision' : 'directory';
+            const isFeed = activeTab === 'apkvision';
+
+            directoryView.classList.toggle('hidden', isFeed);
+            directoryToolbar.classList.toggle('hidden', isFeed);
+            mobileNav.classList.toggle('hidden', isFeed);
+            apkvisionView.classList.toggle('hidden', !isFeed);
+
+            tabDirectoryBtn.classList.toggle('active', !isFeed);
+            tabDirectoryBtn.setAttribute('aria-selected', String(!isFeed));
+            tabApkVisionBtn.classList.toggle('active', isFeed);
+            tabApkVisionBtn.setAttribute('aria-selected', String(isFeed));
+
+            searchBar.placeholder = isFeed
+                ? 'Filter APKVision uploads (e.g., Minecraft, Stardew, v1.2, MOD)...'
+                : 'Search emulators, ports, APKs, drivers (e.g., DroidDeck, Xbox, Turnip)...';
+
+            if (updateHash) {
+                history.replaceState(null, '', isFeed ? '#apkvision-feed' : '#directory');
+            }
+
+            if (isFeed) {
+                renderApkVisionFeed();
+            } else {
+                applyFilters();
+            }
+        }
+
+        tabDirectoryBtn.addEventListener('click', () => {
+            switchTab('directory');
+            playRetroBeep(480, 'triangle', 0.05);
+        });
+        tabApkVisionBtn.addEventListener('click', () => {
+            switchTab('apkvision');
+            playRetroBeep(620, 'triangle', 0.05);
+        });
+
+        const openFeedBtn = document.getElementById('open-apkvision-feed-btn');
+        if (openFeedBtn) {
+            openFeedBtn.addEventListener('click', () => {
+                switchTab('apkvision');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                playRetroBeep(660, 'triangle', 0.06);
+            });
+        }
+
+        window.addEventListener('hashchange', () => {
+            if (location.hash === '#apkvision-feed') {
+                switchTab('apkvision', false);
+            } else if (location.hash && location.hash !== '#directory' && activeTab === 'apkvision') {
+                switchTab('directory', false);
+            }
+        });
+
+        // Unified Search + Recommended Filter + Bookmarks Filter
         const emptyState = document.getElementById('empty-state');
         const emptyTitle = document.getElementById('empty-title');
         const emptySubtitle = document.getElementById('empty-subtitle');
@@ -1654,6 +1970,11 @@
             const q = searchBar.value.toLowerCase().trim();
             const hasFilter = q !== '' || showingRecOnly || showingFavsOnly;
             searchClear.classList.toggle('visible', q !== '');
+
+            if (activeTab === 'apkvision') {
+                renderApkVisionFeed();
+                return;
+            }
 
             let totalVisible = 0;
 
@@ -1751,6 +2072,7 @@
 
         // Surprise Me
         document.getElementById('surprise-btn').addEventListener('click', () => {
+            if (activeTab !== 'directory') switchTab('directory');
             const visibleItems = Array.from(document.querySelectorAll('main li:not(.sub-item):not(.hidden)'));
             const pool = visibleItems.length ? visibleItems : Array.from(document.querySelectorAll('main li:not(.sub-item)'));
             if (!pool.length) return;
@@ -1778,7 +2100,7 @@
                     });
                 }
             });
-        }, { rootMargin: '-150px 0px -65% 0px', threshold: 0 });
+        }, { rootMargin: '-190px 0px -60% 0px', threshold: 0 });
 
         spyTargets.forEach(el => observer.observe(el));
 
@@ -1813,6 +2135,198 @@
             document.getElementById('driver-output').innerHTML = driverDatabase[val] || "Select your processor to find the best Mesa Turnip driver version.";
             if (val) playRetroBeep(480, 'sine', 0.05);
         });
+
+        // APKVision Scraper Feed Controller
+        const feedGrid = document.getElementById('apkvision-feed-grid');
+        const feedStatusBadge = document.getElementById('feed-status-badge');
+        const feedMetaText = document.getElementById('feed-meta-text');
+        const feedTabCount = document.getElementById('feed-tab-count');
+        const feedEmptyState = document.getElementById('feed-empty-state');
+        const feedEmptyTitle = document.getElementById('feed-empty-title');
+        const feedEmptySubtitle = document.getElementById('feed-empty-subtitle');
+        const feedSort = document.getElementById('feed-sort');
+        const feedSavedCount = document.getElementById('feed-saved-count');
+
+        let feedItems = [];
+        let feedDataMeta = null;
+        let feedFilter = 'all';
+        let feedBookmarks = JSON.parse(localStorage.getItem('ahy-apkvision-bookmarks') || '[]');
+
+        function updateFeedSavedCount() {
+            feedSavedCount.textContent = feedBookmarks.length;
+        }
+        updateFeedSavedCount();
+
+        function escapeHtml(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function formatRelativeDate(isoStr) {
+            if (!isoStr) return 'Unknown date';
+            const d = new Date(isoStr);
+            if (Number.isNaN(d.getTime())) return isoStr;
+            return d.toLocaleString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        async function loadApkVisionFeed() {
+            feedStatusBadge.textContent = 'Syncing';
+            try {
+                const res = await fetch(`./data/apkvision.json?t=${Date.now()}`, { cache: 'no-store' });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                feedItems = Array.isArray(data.items) ? data.items : [];
+                feedDataMeta = data;
+                feedTabCount.textContent = feedItems.length;
+                feedStatusBadge.textContent = `${feedItems.length} Indexed`;
+                const updated = data.generated_at ? formatRelativeDate(data.generated_at) : 'Unknown';
+                const strategy = data.strategy ? ` via ${data.strategy}` : '';
+                feedMetaText.textContent = `Last scraped: ${updated}${strategy} · Actively maintained by GitHub Actions`;
+            } catch (err) {
+                feedItems = [];
+                feedTabCount.textContent = '0';
+                feedStatusBadge.textContent = 'Not Populated';
+                feedMetaText.textContent = 'Could not load ./data/apkvision.json yet. Run scripts/scrape_apkvision.py to generate the feed.';
+            }
+            if (activeTab === 'apkvision') renderApkVisionFeed();
+        }
+
+        function renderApkVisionFeed() {
+            const q = searchBar.value.toLowerCase().trim();
+            searchClear.classList.toggle('visible', q !== '');
+
+            let filtered = feedItems.filter(item => {
+                const hay = `${item.title || ''} ${item.version || ''} ${item.category || ''} ${item.genre || ''} ${item.mod_type || ''} ${item.summary || ''}`.toLowerCase();
+                if (q && !hay.includes(q)) return false;
+
+                if (feedFilter === 'games') return (item.category || '').toLowerCase() === 'games';
+                if (feedFilter === 'apps') return (item.category || '').toLowerCase() === 'apps';
+                if (feedFilter === 'mod') return /mod/i.test(`${item.mod_type || ''} ${item.title || ''}`);
+                if (feedFilter === 'full') return /full|paid|pro|premium|unlocked/i.test(`${item.mod_type || ''} ${item.title || ''}`);
+                if (feedFilter === 'saved') return feedBookmarks.includes(item.url);
+                return true;
+            });
+
+            if (feedSort.value === 'title') {
+                filtered.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+            } else {
+                filtered.sort((a, b) => {
+                    const da = new Date(a.published_at || a.last_seen_at || 0).getTime();
+                    const db = new Date(b.published_at || b.last_seen_at || 0).getTime();
+                    return db - da;
+                });
+            }
+
+            if (q || feedFilter !== 'all') {
+                filterStatus.textContent = `Showing ${filtered.length} APKVision upload${filtered.length !== 1 ? 's' : ''}`;
+                filterStatus.classList.add('visible');
+            } else {
+                filterStatus.classList.remove('visible');
+            }
+
+            if (filtered.length === 0) {
+                feedGrid.innerHTML = '';
+                feedEmptyState.classList.add('visible');
+                if (feedItems.length === 0) {
+                    feedEmptyTitle.textContent = 'No APKVision feed data found yet';
+                    feedEmptySubtitle.innerHTML = 'Run <code>python scripts/scrape_apkvision.py</code> or enable the GitHub Actions workflow to populate <code>data/apkvision.json</code>.';
+                } else {
+                    feedEmptyTitle.textContent = 'No matching uploads in feed';
+                    feedEmptySubtitle.textContent = 'Try clearing the search query or switching category pills.';
+                }
+                return;
+            }
+
+            feedEmptyState.classList.remove('visible');
+            feedGrid.innerHTML = filtered.map(item => {
+                const safeTitle = escapeHtml(item.title || 'Untitled');
+                const safeUrl = escapeHtml(item.url || 'https://apkvision.org/');
+                const safeThumb = escapeHtml(item.thumbnail || '');
+                const safeVersion = escapeHtml(item.version || '');
+                const safeCategory = escapeHtml(item.category || 'APK');
+                const safeGenre = escapeHtml(item.genre || '');
+                const safeMod = escapeHtml(item.mod_type || '');
+                const safeSummary = escapeHtml(item.summary || '');
+                const dateLabel = formatRelativeDate(item.published_at || item.last_seen_at);
+                const isSaved = feedBookmarks.includes(item.url);
+                const initials = safeTitle.slice(0, 2).toUpperCase();
+
+                return `
+                    <article class="feed-card">
+                        ${safeThumb
+                            ? `<img class="feed-thumb" src="${safeThumb}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=\\'feed-thumb-fallback\\'>${initials}</div>'">`
+                            : `<div class="feed-thumb-fallback">${initials}</div>`
+                        }
+                        <div class="feed-card-body">
+                            <div class="feed-card-top">
+                                <a class="feed-card-title" href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeTitle}</a>
+                                <button class="action-icon ${isSaved ? 'bookmarked' : ''}" data-feed-save="${safeUrl}" title="Save upload" aria-label="Save upload">🔖</button>
+                            </div>
+                            <div class="feed-tags">
+                                ${safeVersion ? `<span class="tag-pill tag-ver">${safeVersion}</span>` : ''}
+                                <span class="tag-pill tag-cat">${safeCategory}${safeGenre ? ` · ${safeGenre}` : ''}</span>
+                                ${safeMod ? `<span class="tag-pill tag-mod">${safeMod}</span>` : ''}
+                            </div>
+                            ${safeSummary ? `<p class="feed-card-desc">${safeSummary}</p>` : ''}
+                            <div class="feed-card-date">Indexed: ${escapeHtml(dateLabel)}</div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+            feedGrid.querySelectorAll('[data-feed-save]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const url = btn.getAttribute('data-feed-save');
+                    if (feedBookmarks.includes(url)) {
+                        feedBookmarks = feedBookmarks.filter(u => u !== url);
+                        playRetroBeep(300, 'sawtooth');
+                    } else {
+                        feedBookmarks.push(url);
+                        playRetroBeep(750, 'triangle');
+                    }
+                    localStorage.setItem('ahy-apkvision-bookmarks', JSON.stringify(feedBookmarks));
+                    updateFeedSavedCount();
+                    renderApkVisionFeed();
+                });
+            });
+        }
+
+        document.getElementById('feed-filter-pills').addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-feed-filter]');
+            if (!btn) return;
+            feedFilter = btn.getAttribute('data-feed-filter');
+            document.querySelectorAll('[data-feed-filter]').forEach(el => {
+                el.classList.toggle('active', el === btn);
+            });
+            renderApkVisionFeed();
+            playRetroBeep(540, 'triangle', 0.04);
+        });
+
+        feedSort.addEventListener('change', () => {
+            renderApkVisionFeed();
+            playRetroBeep(500, 'sine', 0.04);
+        });
+
+        document.getElementById('feed-refresh-btn').addEventListener('click', () => {
+            loadApkVisionFeed();
+            playRetroBeep(640, 'triangle', 0.06);
+        });
+
+        // Initial load & hash routing
+        loadApkVisionFeed();
+        if (location.hash === '#apkvision-feed') {
+            switchTab('apkvision', false);
+        }
 
         // Back to Top
         const backToTop = document.getElementById('back-to-top');
