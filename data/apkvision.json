@@ -1,9 +1,22 @@
 {
   "source": "https://apkvision.org",
   "strategy": "WordPress REST API",
-  "generated_at": "2026-11-14T07:58:25+00:00",
-  "count": 50,
+  "generated_at": "2026-11-14T14:54:40+00:00",
+  "count": 51,
   "items": [
+    {
+      "title": "Lethal Company",
+      "url": "https://apkvision.org/games/action/lethal-company-port-135777/",
+      "version": "",
+      "category": "Games",
+      "genre": "Action",
+      "mod_type": "",
+      "thumbnail": "https://apkvision.org/wp-content/uploads/2026/11/lethal-company-port.jpg",
+      "summary": "Lethal Company is a cooperative survival horror game where players work for a mysterious corporation, collecting valuable scrap from abandoned industrial facilities on dangerous alien moons. Explore dark corridors, searc",
+      "published_at": "2026-11-14T07:26:28Z",
+      "first_seen_at": "2026-11-14T14:54:40+00:00",
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
+    },
     {
       "title": "Magicraft",
       "url": "https://apkvision.org/games/action/magicraft-135774/",
@@ -15,7 +28,7 @@
       "summary": "Magicraft is an action roguelike game that combines fast-paced combat, creative spell crafting, and a mysterious fantasy world filled with dangerous creatures and ancient gods. You take on the role of an ordinary adventu",
       "published_at": "2026-11-13T20:30:59Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Angry Birds Reloaded",
@@ -28,7 +41,7 @@
       "summary": "Angry Birds Reloaded is an updated version of the classic slingshot puzzle game, bringing back the beloved flock of birds for another egg-citing adventure against the mischievous green pigs. Take aim, pull back your slin",
       "published_at": "2026-11-13T18:55:13Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Slots & Diapers",
@@ -41,7 +54,7 @@
       "summary": "Slots & Diapers invites players into a whimsical world of incremental clicker gameplay where they manage a slot machine empire. Players upgrade from basic machines to advanced models, automate operations with senior gamb",
       "published_at": "2026-11-13T18:53:43Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "The Punisher",
@@ -54,7 +67,7 @@
       "summary": "The Punisher is a third-person action shooter based on the iconic Marvel antihero Frank Castle. Driven by revenge after the murder of his family, Castle takes on New York City’s criminal underworld in a brutal campaign a",
       "published_at": "2026-11-13T17:40:41Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Joshi ji",
@@ -67,7 +80,7 @@
       "summary": "Joshi ji – Open World Car Game offers an immersive experience that blends driving with everyday activities in a vibrant 3D environment. Players can explore the town on foot or by various vehicles, utilizing an in-game ma",
       "published_at": "2026-11-13T17:22:00Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Nazi Zombies: Portable",
@@ -80,7 +93,7 @@
       "summary": "Nazi Zombies: Portable is a fan-made reimagining of the classic Call of Duty Zombies experience, bringing the intense survival gameplay of Call of Duty: World at War into a standalone project powered by an enhanced Quake",
       "published_at": "2026-11-13T15:20:42Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Monster Hunter Freedom Unite",
@@ -93,7 +106,7 @@
       "summary": "Monster Hunter Freedom Unite is an action RPG that puts you in the role of a hunter tasked with tracking down and defeating a wide variety of dangerous monsters across vast and diverse environments. Take on hundreds of c",
       "published_at": "2026-11-13T14:46:14Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "DARK SOULS: REMASTERED",
@@ -106,7 +119,7 @@
       "summary": "DARK SOULS: REMASTERED is a challenging action RPG set in the dark fantasy world of Lordran, a once-great kingdom now consumed by darkness, decay, and the curse of the undead. Embark on a dangerous journey through a vast",
       "published_at": "2026-11-12T20:48:07Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Need for Speed: Rivals",
@@ -119,7 +132,7 @@
       "summary": "Need for Speed: Rivals is an intense open-world racing game set in the fictional Redview County, where street racers and police officers are locked in a relentless battle for speed, glory, and reputation. Choose your sid",
       "published_at": "2026-11-12T20:47:45Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Terminator 2D: NO FATE",
@@ -132,7 +145,7 @@
       "summary": "Terminator 2D: NO FATE is an action-packed arcade game inspired by the legendary film Terminator 2: Judgment Day, bringing its iconic story and characters to life through beautifully crafted pixel art and classic side-sc",
       "published_at": "2026-11-12T20:45:49Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Conflict: Global Terror",
@@ -145,7 +158,7 @@
       "summary": "Conflict: Global Terror is a tactical third-person shooter that puts you in command of an elite special forces unit known as Red Team, tasked with fighting international terrorism across some of the world’s most dangerou",
       "published_at": "2026-11-12T20:45:26Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Crashday Redline Edition",
@@ -158,7 +171,7 @@
       "summary": "Crashday Redline Edition is an explosive arcade racing game that combines high-speed racing, spectacular stunts, and chaotic vehicular combat. Get behind the wheel of powerful sports cars, off-road vehicles, and heavily ",
       "published_at": "2026-11-12T20:43:42Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Stick A Fork",
@@ -171,7 +184,7 @@
       "summary": "Stick A Fork is an engaging incremental game where players stab forks into giant fruit to earn gold and acquire more forks while selecting Boons for powerful synergies. Players can smash fruit into jam, which unlocks pot",
       "published_at": "2026-11-12T20:42:53Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Clone Drone in the Danger Zone",
@@ -184,7 +197,7 @@
       "summary": "Clone Drone in the Danger Zone is an action-packed robot voxel slice-em-up where players control a gladiator robot, navigating deadly arenas filled with peril. The game offers engaging single-player modes such as Story M",
       "published_at": "2026-11-12T20:17:15Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Postal 2",
@@ -197,7 +210,7 @@
       "summary": "Postal 2 is an open-world first-person shooter known for its dark humor, chaotic gameplay, and complete freedom of choice. Play as the Postal Dude, an ordinary man trying to complete everyday errands in the fictional tow",
       "published_at": "2026-11-12T18:18:13Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Total Overdose",
@@ -210,7 +223,7 @@
       "summary": "Total Overdose is an open-world third-person action shooter set in the dangerous streets of Mexico. Play as Ramiro Cruz, a former criminal investigating his father’s mysterious death while taking on powerful drug cartels",
       "published_at": "2026-11-12T18:02:15Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "The Roottrees are Dead",
@@ -223,7 +236,7 @@
       "summary": "The Roottrees are Dead invites players into a late ’90s mystery following a private jet crash involving the wealthy Roottree family. Tasked with unraveling the family’s complex lineage, players must navigate the early in",
       "published_at": "2026-11-12T16:36:59Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "I.G.I. 2: Covert Strike",
@@ -236,7 +249,7 @@
       "summary": "I.G.I. 2: Covert Strike is a tactical first-person shooter that combines intense firefights with stealth-based gameplay and strategic planning. Set in a world where the end of the Cold War has given way to a new era of s",
       "published_at": "2026-11-12T10:13:10Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Super Mario 3D World",
@@ -249,7 +262,7 @@
       "summary": "Super Mario 3D World is a colorful and exciting platforming adventure that takes Mario and his friends on a journey through the magical Sprixie Kingdom to rescue the kidnapped Sprixie Princesses from Bowser. Explore a va",
       "published_at": "2026-11-11T20:42:51Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Barnyard",
@@ -262,7 +275,7 @@
       "summary": "Barnyard is a fun open-world adventure game based on the animated movie of the same name, where you step into the hooves of a young cow arriving at a lively farm full of unusual characters and exciting activities. Explor",
       "published_at": "2026-11-11T20:42:34Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Insider Trading",
@@ -275,7 +288,7 @@
       "summary": "Insider Trading offers a unique gaming experience where players embody traders with distinct strategies and market-impacting cards. As you navigate through market days, you draft cards that can strengthen or weaken your ",
       "published_at": "2026-11-11T19:44:59Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Sonic Free Riders",
@@ -288,7 +301,7 @@
       "summary": "Sonic Free Riders is a high-speed racing game featuring Sonic the Hedgehog and his friends as they compete in an exciting World Grand Prix against rival teams. Choose from a large roster of familiar characters, including",
       "published_at": "2026-11-11T16:04:44Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Graveyard Keeper 2",
@@ -301,7 +314,7 @@
       "summary": "Graveyard Keeper 2 is a darkly humorous medieval management and simulation game where you take on the role of the Grand Inquisitor and face the challenge of rebuilding a town while preparing for a zombie apocalypse. Mana",
       "published_at": "2026-11-10T21:10:46Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Football Manager 27 Mobile",
@@ -314,7 +327,7 @@
       "summary": "Football Manager 27 Mobile puts you in charge of an elite soccer team, allowing you to build a dream squad and strategize for victory. Designed for quick gameplay, it offers an immersive management experience where you c",
       "published_at": "2026-11-10T20:00:08Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Booster Pack Heroes",
@@ -327,7 +340,7 @@
       "summary": "Booster Pack Heroes is an incremental game where players can open booster packs to discover powerful heroes and spells. As you battle through relentless monster hordes, you can upgrade your abilities and increase your st",
       "published_at": "2026-11-10T19:22:38Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Naruto: The Broken Bond",
@@ -340,7 +353,7 @@
       "summary": "Naruto: The Broken Bond is an action-adventure game that continues Naruto Uzumaki’s journey following the events of Naruto: Rise of a Ninja. After the attack on the Hidden Leaf Village is stopped, a new threat emerges as",
       "published_at": "2026-11-10T19:17:51Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Wargame: East Front",
@@ -353,7 +366,7 @@
       "summary": "Wargame: East Front invites players to immerse themselves in the gripping battles of World War II’s eastern front, featuring campaigns from both the Red Army and Wehrmacht perspectives. Players can engage in pivotal conf",
       "published_at": "2026-11-10T19:01:56Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Hillthorn",
@@ -366,7 +379,7 @@
       "summary": "Hillthorn is a dark investigation game that immerses players in a mysterious mountain environment where a child has gone missing. As an outsider, you must navigate treacherous trails and interact with enigmatic locals to",
       "published_at": "2026-11-10T15:54:32Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Persona 4 Arena Ultimax",
@@ -379,7 +392,7 @@
       "summary": "Persona 4 Arena Ultimax is a fast-paced 2D fighting game that brings together the beloved characters from Persona 3 and Persona 4 in an explosive tournament filled with intense battles and supernatural powers. Set shortl",
       "published_at": "2026-11-10T14:28:44Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Warhammer Survivors",
@@ -392,7 +405,7 @@
       "summary": "Warhammer Survivors brings the thrilling bullet heaven action of the survivors genre to the iconic settings of the 41st Millennium and the Mortal Realms. Developed by Auroch Digital and poncle, players can choose from ov",
       "published_at": "2026-11-10T10:30:38Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Thrifty Business",
@@ -405,7 +418,7 @@
       "summary": "Thrifty Business invites players to manage a 90’s-inspired vintage thrift shop, where creativity meets community engagement. Players can explore boxes of pre-loved items to create stunning displays while customizing furn",
       "published_at": "2026-11-10T10:05:04Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Metro 2033",
@@ -418,7 +431,7 @@
       "summary": "Metro 2033 is a dark and atmospheric first-person shooter set in the ruins of post-apocalyptic Moscow, where the last remnants of humanity struggle to survive deep beneath the city in an enormous network of underground t",
       "published_at": "2026-11-09T20:10:27Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Pokemon Shield",
@@ -431,7 +444,7 @@
       "summary": "Pokémon Shield is an exciting role-playing adventure that takes place in the Galar region, a vast world inspired by the British countryside, filled with charming towns, bustling cities, mysterious forests, and snow-cover",
       "published_at": "2026-11-09T20:03:32Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Rain World",
@@ -444,7 +457,7 @@
       "summary": "Rain World is a challenging atmospheric survival platformer set in the ruins of a mysterious, abandoned world ruled by a harsh and unforgiving ecosystem. You play as a small slugcat separated from its family after a deva",
       "published_at": "2026-11-09T19:18:32Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "APKVision Store",
@@ -457,7 +470,7 @@
       "summary": "APKVision Store is the official Android client of APKVISION.ORG, created to provide faster, easier, and unrestricted access to content — always available on your home screen. The app mirrors the website in a clean and si",
       "published_at": "2026-11-09T18:38:20Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Need for Speed: Porsche Unleashed",
@@ -470,7 +483,7 @@
       "summary": "Need for Speed: Porsche Unleashed is a racing game dedicated entirely to the legendary Porsche brand, allowing players to experience over 50 years of automotive history behind the wheel of some of the world’s most iconic",
       "published_at": "2026-11-09T16:18:07Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Vampire: The Masquerade – Bloodlines",
@@ -483,7 +496,7 @@
       "summary": "Vampire: The Masquerade – Bloodlines is a dark action RPG set in the gothic underworld of modern-day Los Angeles, where vampires secretly live among humans, manipulating events and fighting for power from the shadows. Yo",
       "published_at": "2026-11-09T15:31:39Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Sengoku Basara 2: Heroes",
@@ -496,7 +509,7 @@
       "summary": "Sengoku Basara 2: Heroes is an action-packed hack-and-slash game set in the turbulent era of feudal Japan, where powerful warlords clash in massive battles to unite the country under their rule. Choose from a roster of 3",
       "published_at": "2026-11-09T14:56:10Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Monster Hunter 4 Ultimate",
@@ -509,7 +522,7 @@
       "summary": "Monster Hunter 4 Ultimate is an expansive action RPG that puts you in the role of a skilled hunter embarking on an epic journey across mysterious lands alongside a travelling caravan. Your mission is to track down and de",
       "published_at": "2026-11-09T03:59:47Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Mafia",
@@ -522,7 +535,7 @@
       "summary": "Mafia: The City of Lost Heaven is an open-world action-adventure game set in the fictional American city of Lost Heaven during the 1930s. Follow Tommy Angelo, a taxi driver who becomes involved in the dangerous world of ",
       "published_at": "2026-11-08T19:22:44Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "The Last of Us Remastered",
@@ -535,7 +548,7 @@
       "summary": "The Last of Us Remastered is a gripping action-adventure survival game set in a post-apocalyptic world devastated by a deadly fungal infection that has transformed much of humanity into violent, infected creatures. Twent",
       "published_at": "2026-11-08T06:22:13Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Sonic Racing",
@@ -548,7 +561,7 @@
       "summary": "Sonic Racing is a fast-paced arcade racing game featuring Sonic the Hedgehog and a colorful cast of characters from the Sonic universe. Jump behind the wheel and compete against rivals across 15 exciting tracks spread ac",
       "published_at": "2026-11-07T20:33:46Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Manhunt",
@@ -561,7 +574,7 @@
       "summary": "Manhunt is a dark stealth-action horror game developed by Rockstar Games. Play as James Earl Cash, a death row inmate forced to participate in a deadly hunt organized by a mysterious director. Sneak through abandoned bui",
       "published_at": "2026-11-07T14:53:55Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "The Closing Shift",
@@ -574,7 +587,7 @@
       "summary": "[Chilla’s Art] The Closing Shift | 閉店事件 is a psychological horror game that puts you in the role of a young woman working late-night closing shifts at a small Japanese coffee shop. What begins as an ordinary part-time jo",
       "published_at": "2026-11-07T10:55:09Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "The King Is Watching",
@@ -587,7 +600,7 @@
       "summary": "The King Is Watching is a unique roguelite strategy game where your kingdom only functions under your watchful eye. Build a thriving settlement, gather resources, train armies, and defend your castle against waves of dan",
       "published_at": "2026-11-06T16:58:05Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Pac Man Forever",
@@ -600,7 +613,7 @@
       "summary": "PAC-MAN FOREVER is a fan-made arcade game that brings a fresh twist to the classic Pac-Man formula. Navigate endlessly generated mazes, collect pellets, and avoid familiar and new ghosts while discovering unique challeng",
       "published_at": "2026-11-06T15:43:27Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Murder House",
@@ -613,7 +626,7 @@
       "summary": "Murder House is a retro survival horror game inspired by classic 1980s slasher movies and old-school horror games. The story follows a local news crew that breaks into an abandoned house once inhabited by Anthony Smith, ",
       "published_at": "2026-11-06T13:25:52Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "Project I.G.I. (Project IGI: I’m Going In)",
@@ -626,7 +639,7 @@
       "summary": "Project I.G.I.: I’m Going In is a tactical first-person shooter that puts you in the role of David Jones, a highly trained special agent tasked with infiltrating heavily guarded military installations and stopping a dang",
       "published_at": "2026-11-05T18:25:32Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     },
     {
       "title": "The Bunny Graveyard",
@@ -652,7 +665,7 @@
       "summary": "Resident Evil 5 – The game is great for those who love different stories about zombies, as well as all the famous series of games Resident Evil. It does not matter if you are an ardent admirer of this series or for the f",
       "published_at": "2019-11-04T09:18:58Z",
       "first_seen_at": "2026-11-14T07:58:25+00:00",
-      "last_seen_at": "2026-11-14T07:58:25+00:00"
+      "last_seen_at": "2026-11-14T14:54:40+00:00"
     }
   ]
 }
