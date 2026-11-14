@@ -52,8 +52,8 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
-          [ -d data ] && cp -r data _site/
-          [ -d fonts ] && cp -r fonts _site/
+          if [ -d data ]; then cp -r data _site/; fi
+          if [ -d fonts ]; then cp -r fonts _site/; fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
