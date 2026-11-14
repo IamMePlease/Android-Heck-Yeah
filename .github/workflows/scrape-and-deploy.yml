@@ -1,0 +1,75 @@
+name: Scrape & Deploy AHY
+
+on:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run APKVision scraper
+        continue-on-error: true
+        run: python scripts/scrape_apkvision.py --pages 2
+
+      - name: Commit updated feed
+        run: |
+          if [ -f data/apkvision.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/apkvision.json
+            if ! git diff --staged --quiet; then
+              git commit -m "chore: update apkvision.json feed"
+              git push
+            fi
+          fi
+
+      - name: Assemble static site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          [ -d data ] && cp -r data _site/
+          [ -d fonts ] && cp -r fonts _site/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: scrape-and-build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
